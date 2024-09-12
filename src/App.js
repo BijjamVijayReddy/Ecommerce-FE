@@ -1,10 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import AppHeader from './components/appHeader/AppHeader';
+import AppFooter from './components/appFooter/AppFooter';
 
 function App() {
   return (
-    <div className="App">
-      <h2>sample program</h2>
+    <div className='app'>
+      <AppHeader />
+      <h3>Checking</h3>
+      <AppFooter />
     </div>
   );
 }
