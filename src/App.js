@@ -8,7 +8,9 @@ function App() {
     <div className='app'>
       <AppHeader />
       <h3>prostack.com</h3>
-      <h4>App component</h4>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Deserunt quod vitae possimus nisi cumque ad laboriosam praesentium molestiae
+        commodi sed!</p>
       <AppFooter />
     </div>
   );
