@@ -8,6 +8,7 @@ function App() {
     <div className='app'>
       <AppHeader />
       <h3>prostack.com</h3>
+      <h4>App component</h4>
       <AppFooter />
     </div>
   );
