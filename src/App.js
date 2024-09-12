@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='app'>
       <AppHeader />
-      <h3>Checking</h3>
+      <h3>prostack.com</h3>
       <AppFooter />
     </div>
   );
