@@ -6,7 +6,7 @@ import Login from './pages/login/Login';
 function App() {
   return (
     <div>
-      <h1>App components</h1>
+      <h1>App component</h1>
       <Login />
     </div>
   );
