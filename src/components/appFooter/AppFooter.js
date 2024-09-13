@@ -2,8 +2,8 @@ import React from 'react'
 
 const AppFooter = () => {
   return (
-    <div>
-       <h2>AppFooter</h2>
+    <div className='container mx-auto'>
+      <h2>AppFooter</h2>
     </div>
   )
 }
