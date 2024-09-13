@@ -7,7 +7,10 @@ function App() {
   return (
     <div className='app'>
       <AppHeader />
-      <h3>Checking</h3>
+      <h3>prostack.com</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Deserunt quod vitae possimus nisi cumque ad laboriosam praesentium molestiae
+        commodi sed!</p>
       <AppFooter />
     </div>
   );
