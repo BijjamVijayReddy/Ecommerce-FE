@@ -36,15 +36,18 @@ const Login = () => {
     return (
         <div className='login-container'>
             <img src={logo} alt="logo" className='logo' />
+            <h1 className='Login-shift'>LOG IN TO SHIFT CART</h1>
+            <p className='Login-shift1'>WELCOME BACK PLEASE LOG IN TO CONTINUE</p>
+            <br />
             <form onSubmit={handleSubmit} className="login-form">
                 <div className="input-group">
-                    <label htmlFor="email">Email Address</label>
+                    <label>Email Address</label>
                     <input className='input'
                         type="email"
                         id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Enter your email"
+                        placeholder="JOHN.DOE@COMPANY.COM"
                         required
                     />
                 </div>
@@ -55,13 +58,16 @@ const Login = () => {
                         id="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Enter your password"
+                        placeholder="*******************"
                         required
                     />
                     <span className="password-toggle" onClick={handlePasswordToggle}>
                         {showPassword ? eyeClose : eyeSvg}
                     </span>
+                    <br /><br />
                 </div>
+                <p className='signupnow'>DON'T HAVE AN ACCOUNT?<a className='signup' href="#">SIGN UP NOW?!</a></p>
+                <br />
                 <button type="submit" className="login-button">Login</button>
             </form>
         </div>
