@@ -66,7 +66,7 @@ const Login = () => {
                     </span>
                     <br /><br />
                 </div>
-                <p className='signupnow'>Don't have an account ? <a className='signup' href="#">Sign up now ?</a></p>SIGN UP NOW?!
+                <p className='signupnow'>Don't have an account ? <a className='signup' href="#">Sign up now ?</a></p>
                 <br />
                 <button type="submit" className="login-button">Login</button>
             </form>
