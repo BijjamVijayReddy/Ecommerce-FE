@@ -36,12 +36,12 @@ const Login = () => {
     return (
         <div className='login-container'>
             <img src={logo} alt="logo" className='logo' />
-            <h1 className='Login-shift'>LOG IN TO SHIFT CART</h1>
-            <p className='Login-shift1'>WELCOME BACK PLEASE LOG IN TO CONTINUE</p>
+            <h1 className='Login-shift'>Log in to shift cart</h1>
+            <p className='Login-shift1'>Welcome back please log in to continue</p>
             <br />
             <form onSubmit={handleSubmit} className="login-form">
                 <div className="input-group">
-                    <label>Email Address</label>
+                    <label>Email Address/Mobile Number</label>
                     <input className='input'
                         type="email"
                         id="email"
@@ -58,7 +58,7 @@ const Login = () => {
                         id="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                        placeholder="*******************"
+                        placeholder="**************"
                         required
                     />
                     <span className="password-toggle" onClick={handlePasswordToggle}>
@@ -66,7 +66,7 @@ const Login = () => {
                     </span>
                     <br /><br />
                 </div>
-                <p className='signupnow'>DON'T HAVE AN ACCOUNT?<a className='signup' href="#">SIGN UP NOW?!</a></p>
+                <p className='signupnow'>Don't have an account ? <a className='signup' href="#">Sign up now ?</a></p>
                 <br />
                 <button type="submit" className="login-button">Login</button>
             </form>

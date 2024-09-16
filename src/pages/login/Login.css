@@ -72,6 +72,7 @@ body {
 }
 
 .login-button {
+  font-weight: bold;
   padding: 10px;
   background-color: brown;
   color: white;
