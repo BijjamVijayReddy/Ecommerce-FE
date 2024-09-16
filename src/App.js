@@ -6,8 +6,7 @@ import Login from './pages/login/Login';
 function App() {
   return (
     <div>
-      <h1>prostack</h1>
-    <h2>Checking</h2>
+      <h1>checking...</h1>
       <Login />
     </div>
   );
