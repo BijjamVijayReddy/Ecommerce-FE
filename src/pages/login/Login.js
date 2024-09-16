@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import "./Login.css";
+import logo from "../../assests/logo.png"
 
 const eyeSvg = (<svg xmlns="http://www.w3.org/2000/svg" fill="none" style={{ color: "brown" }} viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
@@ -13,14 +15,66 @@ const eyeClose = (
 
 )
 
+
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+
+    const handlePasswordToggle = () => {
+        setShowPassword(!showPassword);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Email:', email);
+        console.log('Password:', password);
+    };
+
+
+
     return (
-        <div>
-            <h2>Login Page</h2>
-            {eyeSvg}
-            {eyeClose}
+        <div className='login-container'>
+            <img src={logo} alt="logo" className='logo' />
+            <h1 className='Login-shift'>Log in to shift cart</h1>
+            <p className='Login-shift1'>Welcome back please log in to continue</p>
+            <br />
+            <form onSubmit={handleSubmit} className="login-form">
+                <div className="input-group">
+                    <label>Email Address/Mobile Number</label>
+                    <input className='input'
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="JOHN.DOE@COMPANY.COM"
+                        required
+                    />
+                </div>
+                <div className="input-group password-group">
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type={showPassword ? 'text' : 'password'}
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="**************"
+                        required
+                    />
+                    <span className="password-toggle" onClick={handlePasswordToggle}>
+                        {showPassword ? eyeClose : eyeSvg}
+                    </span>
+                    <br /><br />
+                </div>
+                <p className='signupnow'>Don't have an account ? <a className='signup' href="#">Sign up now ?</a></p>SIGN UP NOW?!
+                <br />
+                <button type="submit" className="login-button">Login</button>
+            </form>
         </div>
+
+
     )
 }
 
 export default Login
+
