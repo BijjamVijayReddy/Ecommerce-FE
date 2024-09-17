@@ -16,10 +16,16 @@ const eyeClose = (
 )
 
 
+
+
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [isErr, setError] = useState(false);
+    const [emailErr, setEmailEr] = useState("")
+    const [passwordErr, setPasswordEr] = useState("")
+
 
     const handlePasswordToggle = () => {
         setShowPassword(!showPassword);
@@ -27,10 +33,27 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!email) {
+            setError(true)
+            console.log("email is not found")
+            setEmailEr("email is not found")
+        }
         console.log('Email:', email);
+      
+        if (!password) {
+            setError(true)
+            console.log("password is not found")
+            setPasswordEr("password is not found")
+        }
         console.log('Password:', password);
     };
 
+    
+
+
+    // const loginHandeler =()=>{
+    //  console.log("working")
+    // }
 
 
     return (
@@ -48,9 +71,12 @@ const Login = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="JOHN.DOE@COMPANY.COM"
-                        required
+
                     />
+                    <small className='validate-color'>{isErr ? emailErr : null}</small>
+                    
                 </div>
+
                 <div className="input-group password-group">
                     <label htmlFor="password">Password</label>
                     <input
@@ -59,16 +85,23 @@ const Login = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="**************"
-                        required
+
                     />
+                    <small className='validate-color'>{isErr ? passwordErr : null}</small>
+
                     <span className="password-toggle" onClick={handlePasswordToggle}>
-                        {showPassword ? eyeClose : eyeSvg}
+                        {showPassword ? eyeSvg : eyeClose}
                     </span>
                     <br /><br />
                 </div>
+
+                
                 <p className='signupnow'>Don't have an Account ? <a className='signup' href="#">Sign up now ?</a></p>
                 <br />
-                <button type="submit" className="login-button">Login</button>
+                <button type="submit" className="login-button">Submit</button>
+
+            <a href="#" className='forgot-password'>Forgot Password</a>
+
             </form>
         </div>
 
@@ -77,4 +110,5 @@ const Login = () => {
 }
 
 export default Login
+
 

@@ -107,3 +107,13 @@ body {
   font-family: 'Lexend', sans-serif;
   margin-bottom: 15px;
 }
+
+.forgot-password{
+  margin-top: 19px;
+  text-align: center;
+  color: brown;
+}
+
+.validate-color{
+  color: brown;
+}
