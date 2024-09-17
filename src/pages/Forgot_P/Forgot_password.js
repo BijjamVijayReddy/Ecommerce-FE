@@ -8,8 +8,6 @@ const Login = () => {
     const [isErr, setError] = useState(false);
     const [emailErr, setEmailEr] = useState("")
 
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!email) {
