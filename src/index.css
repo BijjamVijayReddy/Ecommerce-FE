@@ -15,3 +15,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+::selection {
+  color: brown;
+  background-color: #fff;
+}
+
+;
+
+body::-webkit-scrollbar {
+  display: none;
+}

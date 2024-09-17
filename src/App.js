@@ -1,10 +1,10 @@
-import Login from './pages/Forgot_P/Forgot_password';
+import AppRoutes from "../src/appRoutes/AppRoutes"
 
 function App() {
   return (
     <div>
-      <Login />  
-      
+      <AppRoutes />
+
     </div>
   );
 }

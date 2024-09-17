@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import "./Forgot_p.css";
+import "./ForgotPassword.css";
 import logo from "../../assests/logo.png"
 
 
-const Login = () => {
+const ForgotPassword = () => {
     const [email, setEmail] = useState('');
     const [isErr, setError] = useState(false);
     const [emailErr, setEmailEr] = useState("")
@@ -15,7 +15,7 @@ const Login = () => {
             console.log("email is not found")
             setEmailEr("email is not found")
         }
-        console.log('Email:', email);  
+        console.log('Email:', email);
     };
 
 
@@ -23,8 +23,8 @@ const Login = () => {
     return (
         <div className='login-container'>
             <img src={logo} alt="logo" className='logo' />
-            <h1 className='Login-shift'>Shift Cart</h1>
-            <p className='Login-shift1'>Change password</p>
+            <h1 className='Login-shift'>Forgot Password for Shift Cart</h1>
+            <p className='Login-shift1'>Reset Your Password for Shift Cart</p>
             <br />
             <form onSubmit={handleSubmit} className="login-form">
                 <div className="input-group">
@@ -38,10 +38,10 @@ const Login = () => {
 
                     />
                     <small className='validate-color'>{isErr ? emailErr : null}</small>
-                    
+
                 </div>
 
-                
+
                 <br />
                 <button type="submit" className="login-button">Submit</button>
 
@@ -53,6 +53,6 @@ const Login = () => {
     )
 }
 
-export default Login
+export default ForgotPassword
 
 
