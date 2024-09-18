@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./Login.css";
-import logo from "../../assests/logo.png"
+import logo from "../../assests/logo.png";
+import { useNavigate } from 'react-router-dom';
 
 const eyeSvg = (<svg xmlns="http://www.w3.org/2000/svg" fill="none" style={{ color: "brown" }} viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
@@ -16,10 +17,17 @@ const eyeClose = (
 )
 
 
+
+
 const Login = () => {
+    const navigate = useNavigate()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [isErr, setError] = useState(false);
+    const [emailErr, setEmailEr] = useState("")
+    const [passwordErr, setPasswordEr] = useState("")
+
 
     const handlePasswordToggle = () => {
         setShowPassword(!showPassword);
@@ -27,9 +35,24 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!email) {
+            setError(true)
+            console.log("email is not found")
+            setEmailEr("Please Enter Your Email Address.")
+        }
         console.log('Email:', email);
+
+        if (!password) {
+            setError(true)
+            console.log("password is not found")
+            setPasswordEr("Please Enter Your Password.")
+        }
         console.log('Password:', password);
     };
+
+
+
+
 
 
 
@@ -41,34 +64,44 @@ const Login = () => {
             <br />
             <form onSubmit={handleSubmit} className="login-form">
                 <div className="input-group">
-                    <label>Email Address</label>
+                    <label>Email Address :</label>
                     <input className='input'
                         type="email"
                         id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="JOHN.DOE@COMPANY.COM"
-                        required
+
                     />
+                    <small className='validate-color'>{isErr ? emailErr : null}</small>
+
                 </div>
+
                 <div className="input-group password-group">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Password : </label>
                     <input
                         type={showPassword ? 'text' : 'password'}
                         id="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="**************"
-                        required
+
                     />
+                    <small className='validate-color'>{isErr ? passwordErr : null}</small>
+
                     <span className="password-toggle" onClick={handlePasswordToggle}>
-                        {showPassword ? eyeClose : eyeSvg}
+                        {showPassword ? eyeSvg : eyeClose}
                     </span>
                     <br /><br />
                 </div>
-                <p className='signupnow'>Don't have an Account ? <a className='signup' href="#">Sign up now ?</a></p>
+
+
+                <p className='signupnow'>Don't have an Account ? <span className='signup' onClick={() => navigate("/sign-Up")}>Sign up now ?</span></p>
                 <br />
-                <button type="submit" className="login-button">Login</button>
+                <button type="submit" className="login-button">Submit</button>
+
+                <p  className='forgot-password' onClick={() => navigate("/forgot-Password")}><span className="text-[black]">Click Here To </span> Reset Your Password? </p>
+
             </form>
         </div>
 
@@ -77,4 +110,5 @@ const Login = () => {
 }
 
 export default Login
+
 
