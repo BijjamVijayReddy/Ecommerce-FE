@@ -5,8 +5,10 @@ import logo from "../../assests/logo.png"
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
+    const [Password, setPassword] = useState('');
     const [isErr, setError] = useState(false);
     const [emailErr, setEmailEr] = useState("")
+    const [passwordErr, setPasswordEr] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -14,6 +16,13 @@ const ForgotPassword = () => {
             setError(true)
             console.log("email is not found")
             setEmailEr("email is not found")
+        }
+        console.log('Email:', email);
+
+        if (!Password) {
+            setError(true)
+            console.log("password should be strong atleast 10 characters")
+            setPasswordEr("password should be strong atleast 10 characters")
         }
         console.log('Email:', email);
     };
@@ -38,6 +47,36 @@ const ForgotPassword = () => {
 
                     />
                     <small className='validate-color'>{isErr ? emailErr : null}</small>
+
+                </div>
+
+                <div className="input-group">
+                    <label>Password</label>
+                    <input className='input'
+                        type="password"
+                        id="password"
+                        value={Password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="***************"
+
+                    />
+                    <small className='validate-color'>{isErr ? passwordErr : null}</small>
+
+                </div>
+
+                {/* confirm-password */}
+
+                <div className="input-group">
+                    <label>Confirm Password</label>
+                    <input className='input'
+                        type="password"
+                        id="password"
+                        value={Password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="***************"
+
+                    />
+                    <small className='validate-color'>{isErr ? passwordErr : null}</small>
 
                 </div>
 

@@ -85,10 +85,14 @@ body {
 
 .signup {
   color: brown;
+  cursor: pointer;
+  font-size: 14px;
   text-decoration: none;
   font-weight: bold;
 }
-
+.text-[black]{
+  font-size: 14px;
+}
 .signup:hover {
   text-decoration: underline;
 }
@@ -110,6 +114,8 @@ body {
 
 .forgot-password{
   margin-top: 19px;
+  margin-left: -192px;
+  cursor: pointer;
   text-align: center;
   color: brown;
 }
