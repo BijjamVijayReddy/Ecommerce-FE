@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import "./Login.css";
 import logo from "../../assests/logo.png";
+import Helmet from "../../components/helmet/Helmet"
 import { useNavigate } from 'react-router-dom';
 
 const eyeSvg = (<svg xmlns="http://www.w3.org/2000/svg" fill="none" style={{ color: "brown" }} viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -53,55 +54,56 @@ const Login = () => {
 
 
     return (
-        <div className='login-container'>
-            <img src={logo} alt="logo" className='logo' />
-            <h1 className='Login-shift'>Log in to Shift Cart</h1>
-            <p className='Login-shift1'>Welcome Back Please Log-in to Continue</p>
-            <br />
-            <form onSubmit={handleSubmit} className="login-form">
-                <div className="input-group">
-                    <label>Email Address :</label>
-                    <input className='input'
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="JOHN.DOE@COMPANY.COM"
-
-                    />
-                    <small className='validate-color'>{isErr ? emailErr : null}</small>
-
-                </div>
-
-                <div className="input-group password-group">
-                    <label htmlFor="password">Password : </label>
-                    <input
-                        type={showPassword ? 'text' : 'password'}
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="**************"
-
-                    />
-                    <small className='validate-color'>{isErr ? passwordErr : null}</small>
-
-                    <span className="password-toggle" onClick={handlePasswordToggle}>
-                        {showPassword ? eyeSvg : eyeClose}
-                    </span>
-                    <br /><br />
-                </div>
-
-
-                <p className='signupnow'>Don't have an Account ? <span className='signup' onClick={() => navigate("/sign-Up")}>Sign up now ?</span></p>
+        <Helmet title="Login">
+            <div className='login-container'>
+                <img src={logo} alt="logo" className='logo' />
+                <h1 className='Login-shift'>Log in to Shift Cart</h1>
+                <p className='Login-shift1'>Welcome Back Please Log-in to Continue</p>
                 <br />
-                <button type="submit" className="login-button">Submit</button>
+                <form onSubmit={handleSubmit} className="login-form">
+                    <div className="input-group">
+                        <label>Email Address :</label>
+                        <input className='input'
+                            type="email"
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="JOHN.DOE@COMPANY.COM"
 
-                <p  className='forgot-password' onClick={() => navigate("/forgot-Password")}><span className="text-[black]">Click Here To </span> Reset Your Password? </p>
+                        />
+                        <small className='validate-color'>{isErr ? emailErr : null}</small>
 
-            </form>
-        </div>
+                    </div>
+
+                    <div className="input-group password-group">
+                        <label htmlFor="password">Password : </label>
+                        <input
+                            type={showPassword ? 'text' : 'password'}
+                            id="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="**************"
+
+                        />
+                        <small className='validate-color'>{isErr ? passwordErr : null}</small>
+
+                        <span className="password-toggle" onClick={handlePasswordToggle}>
+                            {showPassword ? eyeSvg : eyeClose}
+                        </span>
+                        <br /><br />
+                    </div>
 
 
+                    <p className='signupnow'>Don't have an Account ? <span className='signup' onClick={() => navigate("/sign-Up")}>Sign up now ?</span></p>
+                    <br />
+                    <button type="submit" className="login-button">Submit</button>
+
+                    <p className='forgot-password' onClick={() => navigate("/forgot-Password")}><span className="text-[black]">Click Here To </span> Reset Your Password? </p>
+
+                </form>
+            </div>
+
+        </Helmet>
     )
 }
 
