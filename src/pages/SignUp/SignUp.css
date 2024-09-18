@@ -1,57 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Lexend', sans-serif;
+}
+
 .signup-form {
+  
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
   justify-content: center;
-  height:200vh;
+  height:0vh;
   align-items: center;
-  margin-top:60px;
-  margin-left:500px;
-  
+  margin-top:90px;
+  margin-left:550px;
+
   
 }
 .cart{
   margin-left: 150px;
-  font-size: 28px;
+  font-size: 25px;
   
 }
 .cart2{
   margin-left:160px;
-  font-size: 17px;
-}
-.logo {
-  width: 200px;
-  margin-bottom: 20px;
-  margin-left:220px;
-}
-
-
-h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-p {
   font-size: 14px;
-  margin-bottom: 20px;
-  color: #666;
+  margin-bottom: 10px;
+
+}
+.logo_signup {
+  width: 200px;
+  margin-bottom: 16px;
+  margin-left:220px;
 }
 
 .form-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 5px;
+  margin-bottom: px;
   width: 150%;
  
   
 }
-
 .form-group {
   justify-content: space-between;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   width: 143%;
   margin-left: 35px;
    /* Adjusted width to fit two items side by side */
@@ -62,15 +61,21 @@ p {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
+ }
+ .input-box:focus {
+  border-color: brown;
+  outline: none;
 }
 
+
 .label-text {
-  margin-bottom: 5px;
+  margin-bottom: 5px; 
   font-size: 17px;
   color: #333;
   text-align: left;
+ 
 }
-.password-toggle{
+.password-signup{
   position: relative;
   margin-left: 700px;
   top: 10%;
@@ -82,14 +87,11 @@ p {
 .check_input{
   margin-right: 700px;
   margin-top: 1px;
-  
- 
-  
 }
 .label-text-inline {
   font-size: 17px;
   color: #333;
-  margin-right :400px;
+  margin-right :360px;
   margin-top:1px;
   transform: translateY(-80%);
   
@@ -98,7 +100,7 @@ p {
 .submit-button {
   width: 143%;
   padding: 10px;
-  background-color: #d9534f;
+  background-color: brown;
   border: none;
   border-radius: 5px;
   color: white;
@@ -106,26 +108,27 @@ p {
   cursor: pointer;
   margin-left:30px;
   margin-bottom:1px;
-  margin-top: 1px;
- 
+  
+ margin-top: 0px;
  
   
 }
 
 .submit-button:hover {
-  background-color: #c9302c;
+  background-color: brown;
 }
 
 .signin-text {
-  font-size: 17px;
+  font-size: 16px;
   margin-top: 10px; 
   color: #666;
   margin-right: 150px;
 }
 
 .signin-text a {
-  color: #d9534f;
+  color: brown;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .signin-text a:hover {
