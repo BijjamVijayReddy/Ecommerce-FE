@@ -41,13 +41,19 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!email) {
+      setError(true)
+      console.log("email is not found")
+      setFormData("Please Enter Your Email Address.")
+    }
+    console.log('Email:', email);
     console.log("Form Submitted", formData);
     alert("Form submitted successfully!");
   };
 
   return (
     <form className="signup-form" onSubmit={handleSubmit}>
-       <img src={logo} alt="logo" className='logo' />
+       <img src={logo} alt="logo" className='logo_signup' />
 
       <h2 className="cart">Sign up for Swift Cart today!</h2>
       <p className="cart2">Welcome! Please sign up to get started.</p>
@@ -133,7 +139,7 @@ const SignUp = () => {
       <div className="form-group">
         <label htmlFor="password" className="label-text">Password</label>
         <input
-         type="password"
+         type={formData ? 'text' : 'password'}
          id="password"
          name="password"
          className="input-box"
@@ -143,7 +149,7 @@ const SignUp = () => {
          required
          
        />
-       <span className="password-toggle" onClick={handlePasswordToggle}>
+       <span className="password-signup" onClick={handlePasswordToggle}>
        {formData? eyeClose : eyeSvg}
        </span>
        
