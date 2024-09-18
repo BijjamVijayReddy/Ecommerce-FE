@@ -117,7 +117,7 @@ const SignUp = () => {
       </div>
 
       <div className="form-group">
-        <label htmlFor="email" className="label-text">Email</label>
+        <label htmlFor="email" className="label-text">Email Address</label>
         <input
           type="email"
           id="email"
@@ -150,15 +150,17 @@ const SignUp = () => {
        
        </div>
 
-      <div className="check-box">
-        <input
+      <div className="form-group">
+        <input className="check_input"
           type="checkbox"
           id="agree"
           name="agree"
           checked={formData.agree}
           onChange={handleInputChange}
+          
         />
         <label htmlFor="agree" className="label-text-inline">I agree with the terms and conditions</label>
+        
       </div>
 
       <button type="submit" className="submit-button">Submit</button>

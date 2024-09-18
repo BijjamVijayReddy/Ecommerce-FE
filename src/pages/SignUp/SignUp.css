@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
 .signup-form {
   max-width: 500px;
   margin: 0 auto;
@@ -5,21 +6,24 @@
   justify-content: center;
   height:200vh;
   align-items: center;
-  margin-top:100px;
-  margin-left:600px;
+  margin-top:60px;
+  margin-left:500px;
   
   
 }
 .cart{
   margin-left: 150px;
+  font-size: 28px;
+  
 }
 .cart2{
-  margin-left:150px;
+  margin-left:160px;
+  font-size: 17px;
 }
 .logo {
   width: 200px;
   margin-bottom: 20px;
-  margin-left:200px;
+  margin-left:220px;
 }
 
 
@@ -37,7 +41,7 @@ p {
 .form-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   width: 150%;
  
   
@@ -47,7 +51,7 @@ p {
   justify-content: space-between;
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   width: 143%;
   margin-left: 35px;
    /* Adjusted width to fit two items side by side */
@@ -62,35 +66,50 @@ p {
 
 .label-text {
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 17px;
   color: #333;
   text-align: left;
 }
-.checkbox{
-  border-radius: 5px;
-  width: 100%;
-}
-
-.label-text-inline {
-  font-size: 14px;
-  color: #333;
-  margin-right:160px;
+.password-toggle{
+  position: relative;
+  margin-left: 700px;
+  top: 10%;
+  right:20px;
+  transform: translateY(-150%);
   
+  
+}
+.check_input{
+  margin-right: 700px;
+  margin-top: 1px;
   
  
+  
 }
+.label-text-inline {
+  font-size: 17px;
+  color: #333;
+  margin-right :400px;
+  margin-top:1px;
+  transform: translateY(-80%);
+  
+  }
 
 .submit-button {
-  width: 145%;
+  width: 143%;
   padding: 10px;
   background-color: #d9534f;
   border: none;
   border-radius: 5px;
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   cursor: pointer;
   margin-left:30px;
-  margin-top: 10px;
+  margin-bottom:1px;
+  margin-top: 1px;
+ 
+ 
+  
 }
 
 .submit-button:hover {
@@ -98,8 +117,8 @@ p {
 }
 
 .signin-text {
-  font-size: 15px;
-  margin-top: 20px; 
+  font-size: 17px;
+  margin-top: 10px; 
   color: #666;
   margin-right: 150px;
 }
