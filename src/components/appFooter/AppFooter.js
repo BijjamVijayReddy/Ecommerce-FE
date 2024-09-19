@@ -1,9 +1,12 @@
-import React from 'react'
+// App Footer - Chai -  24 
+
+import React from 'react';
+
 
 const AppFooter = () => {
   return (
-    <div className='container mx-auto'>
-      <h2>AppFooter</h2>
+    <div>
+      <h2 className='text-[red] bg-[green]'>Chai</h2>
     </div>
   )
 }
