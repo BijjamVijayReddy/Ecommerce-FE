@@ -3,6 +3,8 @@ import './SignUp.css';
 import logo from "../../assests/logo.png";
 import Helmet from '../../components/helmet/Helmet';
 import { useNavigate } from 'react-router-dom';
+import { fetchApi } from '../../services/fetchApi';
+import SuccessToast, { showToast } from "../../components/toast/SucessToast"
 
 const eyeSvg = (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" style={{ color: "brown" }} viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
@@ -20,17 +22,19 @@ const eyeClose = (
 const SignUp = () => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
+    id: null,
     firstName: "",
     lastName: "",
-    phoneNumber: "",
-    alternateNumber: "",
-    email: "",
-    password: "",
-    agree: false,
+    userMobile: "",
+    alterMobile: "",
+    userEmail: "",
+    userPassword: "",
+    isAccepted: false,
   });
 
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
+  const [isSaved, setSaved] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -44,7 +48,7 @@ const SignUp = () => {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
 
@@ -54,32 +58,63 @@ const SignUp = () => {
     if (!formData.lastName) {
       newErrors.lastName = "Please enter your last name.";
     }
-    if (!formData.email) {
-      newErrors.email = "Please enter a valid email address.";
+    if (!formData.userEmail) {
+      newErrors.userEmail = "Please enter a valid Email address.";
     }
-    if (!formData.password) {
-      newErrors.password = "Please enter a password.";
+    if (!formData.userPassword) {
+      newErrors.userPassword = "Please enter a password.";
     }
-    if (!formData.agree) {
-      newErrors.agree = "You must agree to the terms and conditions.";
+    if (!formData.isAccepted) {
+      newErrors.isAccepted = "Please accept the terms and conditions.";
     }
-    if (!formData.phoneNumber) {
-      newErrors.phoneNumber = "Phone number required.";
+    if (!formData.userMobile) {
+      newErrors.userMobile = "Phone number required.";
     }
-    if (!formData.alternateNumber) {
-      newErrors.alternateNumber = "Phone number required.";
+    if (!formData.alterMobile) {
+      newErrors.alterMobile = " phone number required.";
     }
-
 
     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      console.log("Form submitted successfully", formData);
+    if (Object.keys(newErrors).length > 0) {
+      return; 
+    }
+
+    
+    const data = JSON.stringify(formData);
+    console.log(data);
+
+    try {
+      const result = await fetchApi('POST', "/register", data);
+      console.log(JSON.stringify(result));
+      setSaved(true);
+      showToast("Registration successful! ✅ Welcome to our platform.");
+
+      setFormData({
+        id: null,
+        firstName: "",
+        lastName: "",
+        userMobile: "",
+        alterMobile: "",
+        userEmail: "",
+        userPassword: "",
+        isAccepted: false,
+      });
+    } catch (err) {
+      console.log("Error object:", err);
+
+      const errorMessage = err.response && err.response.data
+        ? JSON.stringify(err.response.data)
+        : "An unknown error occurred. Please try again.";
+
+      alert(errorMessage);
     }
   };
 
+
   return (
     <Helmet title="Sign-Up">
+      {isSaved ? <SuccessToast /> : null};
       <form className="signup-form" onSubmit={handleSubmit}>
         <img src={logo} alt="logo" className="logo_signup" />
         <h2 className="cart">Sign up for Swift Cart today!</h2>
@@ -117,32 +152,36 @@ const SignUp = () => {
 
         <div className="form-row">
           <div className="form-group">
-            <label htmlFor="phoneNumber" className="label-text">Phone number</label>
+            <label htmlFor="userMobile" className="label-text">Phone number</label>
             <input
               type="tel"
-              id="phoneNumber"
-              name="phoneNumber"
+              id="userMobile"
+              name="userMobile"
               className="input-box"
-              value={formData.phoneNumber}
+              maxLength={13}
+              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+              value={formData.userMobile}
               onChange={handleInputChange}
-              placeholder="+91-6786543226"
+              placeholder="+91-9123456789"
             />
-            {errors.phoneNumber && <small className="err-ph">{errors.phoneNumber}</small>}
+            {errors.userMobile && <small className="err-ph">{errors.userMobile}</small>}
 
           </div>
 
           <div className="form-group">
-            <label htmlFor="alternateNumber" className="label-text">Alternate number</label>
+            <label htmlFor="alterMobile" className="label-text">Alternate number</label>
             <input
               type="tel"
-              id="alternateNumber"
-              name="alternateNumber"
+              id="alterMobile"
+              name="alterMobile"
               className="input-box"
-              value={formData.alternateNumber}
+              maxLength={13}
+              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+              value={formData.alterMobile}
               onChange={handleInputChange}
-              placeholder="+91-6786543226"
+              placeholder="+91-9123456789"
             />
-            {errors.alternateNumber && <small className="err-ph">{errors.alternateNumber}</small>}
+            {errors.alterMobile && <small className="err-ph">{errors.alterMobile}</small>}
 
           </div>
         </div>
@@ -152,13 +191,13 @@ const SignUp = () => {
           <input
             type="email"
             id="email"
-            name="email"
+            name="userEmail"
             className="input-box"
-            value={formData.email}
+            value={formData.userEmail}
             onChange={handleInputChange}
             placeholder="JOHN.DOE@COMPANY.COM"
           />
-          {errors.email && <small className="err-email">{errors.email}</small>}
+          {errors.userEmail && <small className="err-email">{errors.userEmail}</small>}
         </div>
 
         <div className="form-group">
@@ -166,31 +205,31 @@ const SignUp = () => {
           <input
             type={showPassword ? 'text' : 'password'}
             id="password"
-            name="password"
+            name="userPassword"
             className="input-box"
-            value={formData.password}
+            value={formData.userPassword}
             onChange={handleInputChange}
-            placeholder="*************"
+            placeholder="••••••••••••••••••"
           />
           <span className="password-sigup" onClick={handlePasswordToggle}>
             {showPassword ? eyeSvg : eyeClose}
           </span>
-          {errors.password && <small className="err-pass">{errors.password}</small>}
+          {errors.userPassword && <small className="err-pass">{errors.password}</small>}
         </div>
 
         <div className="form-group">
           <input
             type="checkbox"
             id="agree"
-            name="agree"
+            name="isAccepted"
             className="check_input"
-            checked={formData.agree}
+            checked={formData.isAccepted}
             onChange={handleInputChange}
           />
           <label htmlFor="agree" className="label-text-inline">
             I agree with the terms and conditions
           </label>
-          {errors.agree && <small className="err-agree">{errors.agree}</small>}
+          {errors.isAccepted && <small className="err-agree">{errors.isAccepted}</small>}
         </div>
 
         <button type="submit" className="submit-button">Submit</button>

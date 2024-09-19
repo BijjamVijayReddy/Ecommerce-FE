@@ -81,7 +81,7 @@ const Login = () => {
                             id="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            placeholder="**************"
+                            placeholder="••••••••••••••••••"
 
                         />
                         <small className='validate-color'>{isErr ? passwordErr : null}</small>

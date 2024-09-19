@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'; // Importing toastify styles
 
 const apiClinet = axios.create({
-    baseURL: 'http://localhost:8000/',
+    baseURL: 'localhost:8888/user',
     headers: {
         'Content-Type': 'application/json',
     },
