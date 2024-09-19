@@ -4,7 +4,9 @@ import logo from "../../assests/logo.png";
 import Helmet from '../../components/helmet/Helmet';
 import { useNavigate } from 'react-router-dom';
 import { fetchApi } from '../../services/fetchApi';
-import SuccessToast, { showToast } from "../../components/toast/SucessToast"
+import SuccessToast, { showSuccessToast } from "../../components/toast/SucessToast"
+import ErrorTaost, { showErrorToast } from '../../components/toast/ErrorToast';
+
 
 const eyeSvg = (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" style={{ color: "brown" }} viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
@@ -35,6 +37,7 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
   const [isSaved, setSaved] = useState(false);
+  const [isErr, setErr] = useState(false)
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -77,10 +80,10 @@ const SignUp = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
-      return; 
+      return;
     }
 
-    
+
     const data = JSON.stringify(formData);
     console.log(data);
 
@@ -88,8 +91,7 @@ const SignUp = () => {
       const result = await fetchApi('POST', "/register", data);
       console.log(JSON.stringify(result));
       setSaved(true);
-      showToast("Registration successful! ✅ Welcome to our platform.");
-
+      showSuccessToast("Registration successful! ✅ Welcome to our platform.");
       setFormData({
         id: null,
         firstName: "",
@@ -103,11 +105,12 @@ const SignUp = () => {
     } catch (err) {
       console.log("Error object:", err);
 
-      const errorMessage = err.response && err.response.data
-        ? JSON.stringify(err.response.data)
-        : "An unknown error occurred. Please try again.";
+      if (err.response && err.response.data) {
+        setErr(true);
+        showErrorToast("⚠️An unknown error occurred. Please try again.");
+        alert("True")
+      }
 
-      alert(errorMessage);
     }
   };
 
@@ -115,6 +118,7 @@ const SignUp = () => {
   return (
     <Helmet title="Sign-Up">
       {isSaved ? <SuccessToast /> : null};
+      {isErr ? <ErrorTaost /> : null}
       <form className="signup-form" onSubmit={handleSubmit}>
         <img src={logo} alt="logo" className="logo_signup" />
         <h2 className="cart">Sign up for Swift Cart today!</h2>
@@ -159,7 +163,6 @@ const SignUp = () => {
               name="userMobile"
               className="input-box"
               maxLength={13}
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
               value={formData.userMobile}
               onChange={handleInputChange}
               placeholder="+91-9123456789"
@@ -176,7 +179,6 @@ const SignUp = () => {
               name="alterMobile"
               className="input-box"
               maxLength={13}
-              pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
               value={formData.alterMobile}
               onChange={handleInputChange}
               placeholder="+91-9123456789"
