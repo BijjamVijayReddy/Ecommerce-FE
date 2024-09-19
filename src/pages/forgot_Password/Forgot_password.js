@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
 import "./ForgotPassword.css";
-import logo from "../../assests/logo.png"
+import logo from "../../assests/logo.png";
 
 
 const ForgotPassword = () => {
     const [email, setEmail] = useState('');
     const [Password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [isErr, setError] = useState(false);
     const [emailErr, setEmailEr] = useState("")
     const [passwordErr, setPasswordEr] = useState("")
+    const [confirmPasswordErr, setConfirmPasswordErr] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!email) {
             setError(true)
             console.log("email is not found")
-            setEmailEr("email is not found")
+            setEmailEr("enter your email ")
         }
         console.log('Email:', email);
 
@@ -24,7 +26,21 @@ const ForgotPassword = () => {
             console.log("password should be strong atleast 10 characters")
             setPasswordEr("password should be strong atleast 10 characters")
         }
+        if (!confirmPassword) {
+            setError(true)
+            console.log("password should be strong atleast 10 characters")
+            setConfirmPasswordErr("password should be strong atleast 10 characters")
+        }
+ 
+        if (Password !== confirmPassword) {
+            setError(true)
+            setPasswordEr("Password doesn't match")
+            setConfirmPasswordErr("Password doesn't match")
+        }
+
         console.log('Email:', email);
+        console.log('Email:', Password);
+        console.log('Email:', confirmPassword);
     };
 
 
@@ -71,12 +87,12 @@ const ForgotPassword = () => {
                     <input className='input'
                         type="password"
                         id="password"
-                        value={Password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
                         placeholder="***************"
 
                     />
-                    <small className='validate-color'>{isErr ? passwordErr : null}</small>
+                    <small className='validate-color'>{isErr ? confirmPasswordErr : null}</small>
 
                 </div>
 

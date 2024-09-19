@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Login.css";
 import logo from "../../assests/logo.png";
-import Helmet from "../../components/helmet/Helmet"
+import Helmet from "../../components/helmet/Helmet" 
 import { useNavigate } from 'react-router-dom';
 import { fetchApi } from '../../services/fetchApi';
 
