@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./Login.css";
 import logo from "../../assests/logo.png";
-import Helmet from "../../components/helmet/Helmet"
+import Helmet from "../../components/helmet/Helmet" 
 import { useNavigate } from 'react-router-dom';
 
 const eyeSvg = (<svg xmlns="http://www.w3.org/2000/svg" fill="none" style={{ color: "brown" }} viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -16,8 +16,6 @@ const eyeClose = (
     </svg>
 
 )
-
-
 
 
 const Login = () => {
