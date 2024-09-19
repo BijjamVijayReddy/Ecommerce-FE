@@ -36,19 +36,20 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!email) {
-            setError(true)
-            console.log("email is not found")
-            setEmailEr("Please Enter Your Email Address.")
-        }
-        console.log('Email:', email);
+        // if (!email) {
+        //     setError(true)
+        //     console.log("email is not found")
+        //     setEmailEr("Please Enter Your Email Address.")
+        // }
+        // console.log('Email:', email);
 
-        if (!password) {
-            setError(true)
-            console.log("password is not found")
-            setPasswordEr("Please Enter Your Password.")
-        }
+        // if (!password) {
+        //     setError(true)
+        //     console.log("password is not found")
+        //     setPasswordEr("Please Enter Your Password.")
+        // }
         console.log('Password:', password);
+        navigate("/dashboard")
     };
 
 
@@ -102,7 +103,7 @@ const Login = () => {
 
                 </form>
             </div>
-            
+
 
         </Helmet>
     )
