@@ -14,7 +14,7 @@ const AppFooter = () => {
         <p className='image-txt1'>TASTY TREAT:WHERE FLAVOUR MEETS DELIGHT. EVERY BITE IS A</p>
         <p className='image-txt1'>JOURNEY OF PURE ENJOYMENT!</p>
         
-        <p  className='image-txt2'>COPYRIGHT - 2024. WEBSITE MADE BY VIJAY. ALL RIGHTS RESEVERED.</p>
+        <p  className='image-txt2'>COPYRIGHT - 2024. WEBSITE MADE BY greet labs pvt ltd. ALL RIGHTS RESEVERED.</p>
       </div>
 
       <div>
@@ -34,7 +34,7 @@ const AppFooter = () => {
         <p className='number'>+91-9491467216</p>
         {/* Email  US */}
         <h1>EMAIL</h1>
-        <p className='email-txt'>BIJJAMVIJAYREDDY@GMAIL.COM</p>
+        <p className='email-txt'>greetlabspvtltd@GMAIL.COM</p>
       </div>
 
       <div>
