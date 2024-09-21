@@ -91,7 +91,7 @@ const SignUp = () => {
       const result = await fetchApi('POST', "/register", data);
       console.log(JSON.stringify(result));
       setSaved(true);
-      showSuccessToast("Registration successful! ✅ Welcome to our platform.");
+      // showSuccessToast("Registration successful! ✅ Welcome to our platform.");
       setFormData({
         id: null,
         firstName: "",
@@ -107,7 +107,7 @@ const SignUp = () => {
 
       if (err.response && err.response.data) {
         setErr(true);
-        showErrorToast("⚠️An unknown error occurred. Please try again.");
+        // showErrorToast("⚠️An unknown error occurred. Please try again.");
         alert("True")
       }
 
