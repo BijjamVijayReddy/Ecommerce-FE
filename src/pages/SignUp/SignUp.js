@@ -4,8 +4,10 @@ import logo from "../../assests/logo.png";
 import Helmet from '../../components/helmet/Helmet';
 import { useNavigate } from 'react-router-dom';
 import { fetchApi } from '../../services/fetchApi';
-import SuccessToast, { showSuccessToast } from "../../components/toast/SucessToast"
-import ErrorTaost, { showErrorToast } from '../../components/toast/ErrorToast';
+import ErrorToast, { errorToast } from '../../components/toast/ErrorToast';
+import SuccessToast, { sucessToast } from '../../components/toast/SucessToast';
+import SpinnerLoader from '../../components/spinLoader/SpinLoader';
+
 
 
 const eyeSvg = (
@@ -36,8 +38,8 @@ const SignUp = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({});
-  const [isSaved, setSaved] = useState(false);
-  const [isErr, setErr] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
+
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -53,6 +55,7 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     let newErrors = {};
 
     if (!formData.firstName) {
@@ -80,6 +83,7 @@ const SignUp = () => {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
+      setIsLoading(false);
       return;
     }
 
@@ -90,8 +94,7 @@ const SignUp = () => {
     try {
       const result = await fetchApi('POST', "/register", data);
       console.log(JSON.stringify(result));
-      setSaved(true);
-      showSuccessToast("Registration successful! ✅ Welcome to our platform.");
+      sucessToast("Data is Saved");
       setFormData({
         id: null,
         firstName: "",
@@ -103,22 +106,20 @@ const SignUp = () => {
         isAccepted: false,
       });
     } catch (err) {
-      console.log("Error object:", err);
-
-      if (err.response && err.response.data) {
-        setErr(true);
-        showErrorToast("⚠️An unknown error occurred. Please try again.");
-        alert("True")
+      if (err.message) {
+        errorToast("Account Already Exists.");
+      } else {
+        errorToast("An unexpected error occurred.");
       }
-
+      setIsLoading(false);
     }
   };
 
 
   return (
     <Helmet title="Sign-Up">
-      {isSaved ? <SuccessToast /> : null};
-      {isErr ? <ErrorTaost /> : null}
+      <ErrorToast />
+      <SuccessToast />
       <form className="signup-form" onSubmit={handleSubmit}>
         <img src={logo} alt="logo" className="logo_signup" />
         <h2 className="cart">Sign up for Swift Cart today!</h2>
@@ -234,7 +235,12 @@ const SignUp = () => {
           {errors.isAccepted && <small className="err-agree">{errors.isAccepted}</small>}
         </div>
 
-        <button type="submit" className="submit-button">Submit</button>
+        <button type="submit" className="submit-button">{isLoading ? (
+          <>
+            <SpinnerLoader isLoading={isLoading} />
+            <span style={{ marginLeft: '8px' }}>Loading...</span>
+          </>
+        ) : "Submit"}</button>
 
         <p className="signin-text">
           Already have an account? <span className='signin' onClick={() => navigate("/login")}>Sign in Now.</span>

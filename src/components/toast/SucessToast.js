@@ -6,10 +6,17 @@ function SuccessToast() {
     return <ToastContainer />;
 }
 
-export const showToast = (message) => {
-    toast.success(message, {
+
+
+export const sucessToast = (msg) => {
+    toast.success(msg, {
         position: "bottom-right",
-        hideProgressBar: true
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
     });
 };
 

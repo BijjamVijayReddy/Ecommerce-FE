@@ -7,8 +7,8 @@ function ErrorTaost() {
 }
 
 export const errorToast = (message) => {
-    toast.error("Error message", {
-        position: "top-right",
+    toast.error(message, {
+        position: "bottom-right",
         autoClose: 5000,
         hideProgressBar: false,
         closeOnClick: true,
