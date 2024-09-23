@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import "./Login.css";
 import logo from "../../assests/logo.png";
-import Helmet from "../../components/helmet/Helmet" 
+import Helmet from "../../components/helmet/Helmet"
 import { useNavigate } from 'react-router-dom';
 import { fetchApi } from '../../services/fetchApi';
+import SpinnerLoader from '../../components/spinLoader/SpinLoader';
+import ErrorToast, { errorToast } from '../../components/toast/ErrorToast';
+import sessionService from '../../services/sessionServices';
 
 const eyeSvg = (<svg xmlns="http://www.w3.org/2000/svg" fill="none" style={{ color: "brown" }} viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
@@ -28,53 +31,70 @@ const Login = () => {
     const [isErr, setError] = useState(false);
     const [emailErr, setEmailEr] = useState("")
     const [passwordErr, setPasswordEr] = useState("")
-
+    const [isLoading, setIsLoading] = useState(false);
 
     const handlePasswordToggle = () => {
         setShowPassword(!showPassword);
     };
 
+
     const handleSubmit = async (e) => {
+        setIsLoading(true);
         e.preventDefault();
+
+        let hasError = false;
+
         if (!email) {
-            setError(true)
-            console.log("email is not found")
-            setEmailEr("Please Enter Your Email Address.")
+            setError(true);
+            console.log("email is not found");
+            setEmailEr("Please Enter Your Email Address.");
+            hasError = true;
         }
-        console.log('Email:', email);
 
         if (!password) {
-            setError(true)
-            console.log("password is not found")
-            setPasswordEr("Please Enter Your Password.")
-        };
-        console.log('Password:', email);
-        console.log('Password:', password);
+            setError(true);
+            console.log("password is not found");
+            setPasswordEr("Please Enter Your Password.");
+            hasError = true;
+        }
 
+        if (hasError) {
+            setIsLoading(false);
+            return;
+        }
+
+        console.log('Email:', email);
+        console.log('Password:', password);
 
         const userData = {
             userEmail: email,
             userPassword: password
         };
-        const data = JSON.stringify(userData)
+        const data = JSON.stringify(userData);
 
         try {
             const result = await fetchApi("POST", "/login", data);
-            console.log(JSON.stringify(result))
-            navigate("/dashboard");
 
+            if (result && result.token) {
+                sessionService.setToken(result.token)
+            }
+            navigate("/dashboard");
         } catch (err) {
-            alert("err", err);
-            navigate("/dashboard");
-        };
-
-
+            console.log(err);
+            if (err) {
+                console.log(err);
+                errorToast("Bad Credentials");
+            } else {
+                errorToast("An unexpected error occurred.");
+            }
+            setIsLoading(false);
+        }
     };
-
 
 
     return (
         <Helmet title="Login">
+            <ErrorToast />
             <div className='login-container'>
                 <img src={logo} alt="logo" className='logo' />
                 <h1 className='Login-shift'>Log in to Shift Cart</h1>
@@ -116,7 +136,13 @@ const Login = () => {
 
                     <p className='signupnow'>Don't have an Account ? <span className='signup' onClick={() => navigate("/sign-Up")}>Sign up now ?</span></p>
                     <br />
-                    <button type="submit" className="login-button">Submit</button>
+                    <button type="submit" className="login-button">{isLoading ? (
+                        <>
+                            <SpinnerLoader isLoading={isLoading} />
+                            <span style={{ marginLeft: '8px' }}>Loading...</span>
+                        </>
+                    ) : "Submit"}</button>
+
 
                     <p className='forgot-password' onClick={() => navigate("/forgot-Password")}><span className="text-[black]">Click Here To </span> Reset Your Password? </p>
 
