@@ -5,8 +5,8 @@ import AppFooter from '../../components/appFooter/AppFooter'
 const Dashboard = () => {
     return (
         <div>
-            {/* <AppHeader />
-                <p> This Page is still under construction</p> */}
+            <AppHeader />
+                <p> This Page is still under construction</p>
             <AppFooter />
         </div>
     )

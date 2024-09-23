@@ -1,0 +1,312 @@
+General Styling
+body, ul, li, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #f5f5f5;
+  padding: 0px 20px;
+}
+/* Default navbar styles (white background) */
+.header {
+  background-color: #f5f5f5;
+  padding: 0px 15px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: background-color 0.3s ease;
+  height: 15vh; /* Smooth transition */
+}
+
+/* Navbar when scrolled (gray background) */
+.header.scrolled {
+  background-color: white;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: -5px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 7rem;
+  margin: 1rem;
+}
+
+.logo-image {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+ 
+}
+
+.nav ul li {
+  margin-left: 40px;
+  
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+.nav ul li a:hover {
+  color: brown; /* Hover effect */
+}
+/* .active-link {
+  color:; /* Set the active link color to brown */
+  .brown {
+    color: brown; /* Makes the link always brown */
+  }
+  
+  .active-link {
+    font-weight: bold; /* Add any other styles you want when a link is active */
+  }
+  
+
+.cart-login {
+  display:flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon {
+  font-size: 24px;
+}
+.shopping-cart-icon{
+  position:relative;
+  margin-top: 35px;
+  align-items: center;
+  font-size: 25px;
+ 
+  
+}
+.cart-count {
+  font-size: 15px;
+  position: relative;
+  background-color: brown;
+  color: white;
+  padding: 3px 9px;
+  border-radius: 50%;
+  display: flex;
+  right: -19px;
+  top: -53px;
+  text-align: center;
+  align-items: center;
+}
+
+/* .login-button {
+  padding: 8px 16px;
+  background-color:brown;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+} */
+
+.login-button:hover {
+  background-color: brown;
+}
+
+/* Responsive Design */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+/* Profile Icon */
+.profile-icon {
+  cursor: pointer;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+/* Profile Dropdown Styles */
+.profile-dropdown {
+  position: absolute;
+  right: 40px;
+  top: 70px; /* Adjust based on your navbar height */
+  background-color:#f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  z-index: 1000;
+  font-size: small;
+  
+}
+
+/* Dropdown List */
+.profile-dropdown ul {
+  list-style-type: none;
+  padding: 10;
+  margin: 0;
+}
+
+.profile-dropdown ul li {
+  padding: 10px 0;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.5s ease;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* .profile-dropdown ul li:hover {
+  background-color:  lightgray;
+  border-radius: 5px; */  
+  /* color: #fff; */
+
+.browne{
+  background:brown;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+   
+}
+
+
+
+@media (max-width: 768px )and (max-width: 992px)
+ {
+  .nav {
+    display: none;
+  }
+
+  .menu-toggle:checked + .nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: brown;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1;
+  }
+
+  .nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+    justify-content:right;
+    justify-items: right;
+}
+
+  .nav ul li {
+    text-align:center;
+    margin: 0;
+    margin-left: 15px;
+    justify-content:center;
+    justify-items: right;
+  }
+
+  .cart-login {
+    display: block;
+  }
+  .cart {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-icon {
+    font-size: 24px;
+  }
+  .shopping-cart-icon{
+    position: fixed;
+    margin-top: 35px;
+    align-items: center;
+    font-size: 25px;
+    right: 100px;
+    
+  }
+
+  .menu-icon {
+    display: block;
+  }
+  .cart-count{
+    position: relative;
+    display: block;
+    left: 20px;
+  
+  }
+}
+
+@media (max-width: 576px) {
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .login-button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .cart-icon {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .header {
+    padding: 12px 25px; 
+  }
+
+  .container {
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+  }
+
+  .logo-image {
+    width: 45px; 
+  }
+
+  .nav ul {
+    gap: 30px; 
+  }
+
+  .nav ul li {
+    margin-left: 30px; 
+  }
+
+  .cart-icon {
+    font-size: 22px; 
+  }
+  .cart-login{
+    display: flex;
+  }
+   
+}
+
+
+
+
