@@ -3,6 +3,7 @@ import AppRoutes from "../src/appRoutes/AppRoutes";
 import { useNavigate } from 'react-router-dom';
 import sessionService from "./services/sessionServices";
 
+
 function App() {
   const navigate = useNavigate();
   const [initialized, setInitialized] = useState(false);
