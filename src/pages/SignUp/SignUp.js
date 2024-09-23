@@ -212,6 +212,7 @@ const SignUp = () => {
             value={formData.userPassword}
             onChange={handleInputChange}
             placeholder="••••••••••••••••••"
+            
           />
           <span className="password-sigup" onClick={handlePasswordToggle}>
             {showPassword ? eyeSvg : eyeClose}

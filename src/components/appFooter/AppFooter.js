@@ -41,7 +41,7 @@ const AppFooter = () => {
       <div>
         {/* News Letter US */}
         <h1 className='newsletter'>NEWSLETTER</h1>
-        <input className='input-box' type="text" placeholder='ENTER EMAIL FOR LATEST NEWS' />
+        <input className='input-Box' type="text" placeholder='ENTER EMAIL FOR LATEST NEWS' />
         <br />
         <button className='btn'>SEND</button>
       </div>
