@@ -10,16 +10,17 @@ const AppFooter = () => {
     <div className='appfooter'>
       <div>
         <img src={myImage} alt='log' height={150} width={150} style={{ marginTop: 10, marginLeft: 10 }}
-/>
-        <p className='image-txt1'>TASTY TREAT:WHERE FLAVOUR MEETS DELIGHT. EVERY BITE IS A</p>
+        />
+        <p className='image-txt1'>SWIFT CART:WHERE FLAVOUR MEETS DELIGHT. EVERY BITE IS A</p>
         <p className='image-txt1'>JOURNEY OF PURE ENJOYMENT!</p>
-        
-        <p  className='image-txt2'>COPYRIGHT - 2024. WEBSITE MADE BY greet labs pvt ltd. ALL RIGHTS RESEVERED.</p>
+
+        <p className='image-txt2'>COPYRIGHT - 2024. WEBSITE MADE BY greet labs pvt ltd. ALL RIGHTS RESEVERED.</p>
       </div>
+
 
       <div>
         {/* About US */}
-        <h1 className='about'>ABOUT US</h1>
+        <h1 className='about'>About Us</h1>
         <br />
         <p className='about1'>OUR STORES</p>
         <br />
@@ -30,21 +31,20 @@ const AppFooter = () => {
 
       <div>
         {/* Contact  US */}
-        <h1 className='contact'>CONTACT</h1>
+        <h1 className='contact'>Contact Us</h1>
         <p className='number'>+91-9491467216</p>
         {/* Email  US */}
-        <h1>EMAIL</h1>
+        <h1 className='email'>EMAIL</h1>
         <p className='email-txt'>greetlabspvtltd@GMAIL.COM</p>
       </div>
 
       <div>
         {/* News Letter US */}
         <h1 className='newsletter'>NEWSLETTER</h1>
-        <input className='input-box' type="text" placeholder='ENTER EMAIL FOR LATEST NEWS'/>
+        <input className='input-box' type="text" placeholder='ENTER EMAIL FOR LATEST NEWS' />
         <br />
-         <button className='btn'>SEND</button>
+        <button className='btn'>SEND</button>
       </div>
-
 
     </div>
   )
