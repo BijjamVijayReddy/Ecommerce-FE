@@ -11,10 +11,10 @@ const AppFooter = () => {
       <div>
         <img src={myImage} alt='log' height={150} width={150} style={{ marginTop: 10, marginLeft: 10 }}
         />
-        <p className='image-txt1'>SWIFT CART:WHERE FLAVOUR MEETS DELIGHT. EVERY BITE IS A</p>
-        <p className='image-txt1'>JOURNEY OF PURE ENJOYMENT!</p>
+        <p className='image-txt1'>Swift Cart:Where Flavour Meets Delight. Every Bite Is a</p>
+        <p className='image-txt1'>Journey Of Pure Enjoyment!</p>
 
-        <p className='image-txt2'>COPYRIGHT - 2024. WEBSITE MADE BY greet labs pvt ltd. ALL RIGHTS RESEVERED.</p>
+        <p className='image-txt2'>Copyright - 2024. Website Made By Greet Labs Pvt Ltd. All Rights Reserved </p>
       </div>
 
 
@@ -22,28 +22,28 @@ const AppFooter = () => {
         {/* About US */}
         <h1 className='about'>About Us</h1>
         <br />
-        <p className='about1'>OUR STORES</p>
+        <p className='about1'>Our Stores</p>
         <br />
-        <p className='about2'>TEAMS & CONDITIONS</p>
+        <p className='about2'>Terms & Conditions</p>
         <br />
-        <p className='about3'>PRIVACY POLICY</p>
+        <p className='about3'>Privacy Policy</p>
       </div>
 
       <div>
         {/* Contact  US */}
         <h1 className='contact'>Contact Us</h1>
-        <p className='number'>+91-9491467216</p>
+        <p className='number'>+91-9123456789</p>
         {/* Email  US */}
-        <h1 className='email'>EMAIL</h1>
-        <p className='email-txt'>greetlabspvtltd@GMAIL.COM</p>
+        <h1 className='email'>Email</h1>
+        <p className='email-txt'>greetlabspvtltd@gmail.com</p>
       </div>
 
       <div>
         {/* News Letter US */}
-        <h1 className='newsletter'>NEWSLETTER</h1>
-        <input className='input-Box' type="text" placeholder='ENTER EMAIL FOR LATEST NEWS' />
+        <h1 className='newsletter'>Newsletter</h1>
+        <input className='input-Box' type="text" placeholder='Enter email for latest news'/>
         <br />
-        <button className='btn'>SEND</button>
+        <button className='btn'>Send</button>
       </div>
 
     </div>
