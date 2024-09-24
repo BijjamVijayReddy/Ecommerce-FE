@@ -7,7 +7,7 @@ import Dashbaord from "../pages/dashboard/Dashboard";
 import Categories from "../pages/categories/Categories";
 import About from '../pages/about-us/About';
 import Contact from '../pages/contact/Contact';
-import Home from '../pages/home/Home';
+
 
 const AppRoutes = () => {
     return (
@@ -17,11 +17,10 @@ const AppRoutes = () => {
             <Route path='/forgot-Password' element={<ForgotPassword />} />
             <Route path='/dashboard' element={<Dashbaord />} />
             <Route path='*' element={<Navigate to="/" />} />
-            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashbaord />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            
             </Routes>
     )
 }
