@@ -6,6 +6,7 @@ import AppHeader from '../../components/appHeader/AppHeader';
 const About = () => {
   return (
     <div>
+      
       <AppHeader/>
     </div>
   )
