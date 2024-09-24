@@ -7,8 +7,8 @@ const Modal = ({ show, onClose, onConfirm }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <h2>Deactivate account</h2>
-        <p>Are you sure you want to logout your account? All of your data will be permanently removed from our servers forever. This action cannot be undone.</p>
+        
+        <p>Are You Sure You Want To logout Your Account? </p>
         <div className="modal-buttons">
           <button className="cancel-button" onClick={onClose}>Cancel</button>
           <button className="confirm-button" onClick={onConfirm}>Logout</button>
