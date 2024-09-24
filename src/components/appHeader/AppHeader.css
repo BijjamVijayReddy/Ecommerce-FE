@@ -1,4 +1,3 @@
-/* Default navbar styles (white background) */
 .header {
   background-color: #ededed;
   padding: 5px;
@@ -17,8 +16,6 @@
   box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
   /* Optional shadow effect */
 }
-
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -26,57 +23,41 @@
   flex-wrap: wrap;
   margin-top: -5px;
 }
-
 .logo {
   display: flex;
   align-items: center;
   width: 7rem;
   margin: 1rem;
 }
-
-.logo-image {
+/* .logo-image {
   width: 50px;
   margin-right: 10px;
-}
-
+} */
 .nav {
   display: flex;
-}
-
-.nav ul {
+}.nav ul {
   display: flex;
   list-style: none;
 
 }
-
 .nav ul li {
   margin-left: 40px;
 
 }
-
 .nav ul li a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
 }
-
 .nav ul li a:hover {
   color: brown;
   /* Hover effect */
 }
 
-/* .active-link {
-  color:; /* Set the active link color to brown */
-.brown {
+.nav .text-[brown].font-bold {
   color: brown;
-  /* Makes the link always brown */
-}
-
-.active-link {
   font-weight: bold;
-  /* Add any other styles you want when a link is active */
 }
-
 
 .cart-login {
   display: flex;
