@@ -5,6 +5,8 @@ import img26 from '../../assests/Img26.webp'
 import img24 from '../../assests/Img24.webp'
 import img12 from '../../assests/img12.jpeg'
 import img13 from '../../assests/Img13.jpg'
+import img25 from '../../assests/Img25.webp'
+import img16 from '../../assests/img16.jpg'
 
 
 // Custom Previous Arrow
@@ -36,6 +38,8 @@ const user_img = [
   { userImg: img24, text: "Active Wear" },
   { userImg: img12, text: "Active Wear" },
   { userImg: img13, text: "Active Wear" },
+  { userImg: img25, text: "Active Wear" },
+  { userImg: img16, text: "Active Wear" },
 ];
 
 const Slider = () => {
