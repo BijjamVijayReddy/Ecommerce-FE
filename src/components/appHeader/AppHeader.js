@@ -9,10 +9,10 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../modal/Modal';
-
+import sessionService from '../../services/sessionServices';
 
 const AppHeader = () => {
-  const [showLogoutModal, setShowLogoutModal] = useState(false); // Add state for modal
+  const [showLogoutModal, setShowLogoutModal] = useState(false); 
    const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
@@ -38,18 +38,21 @@ const AppHeader = () => {
     setShowProfileDropdown(!showProfileDropdown);
 
   };
-
   const handleLogoutClick = () => {
-    setShowLogoutModal(true); // Show the logout confirmation modal
+    setShowProfileDropdown(false); 
+    setShowLogoutModal(true); 
   };
-
+  
   const handleConfirmLogout = () => {
-    setShowLogoutModal(false); // Close modal after confirmation
-    navigate('/login'); // Redirect to login page
+    sessionService.clearToken(); 
+    setShowLogoutModal(false); 
+    navigate('/login'); 
   };
   const handleCloseModal = () => {
-    setShowLogoutModal(false); // Close modal without logging out
+    setShowLogoutModal(false); 
   };
+  
+  
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
@@ -84,15 +87,13 @@ const AppHeader = () => {
                 <li onClick={() => navigate('/MyProfile')}>MyProfile</li>
                 <li onClick={() => navigate('/Payment History')}>Payment History</li>
                 <li onClick={() => navigate('/settings')}>Settings</li>
-
                 <li className="browne" onClick={handleLogoutClick} style={{ color: 'white' }}>Logout</li>
               </ul>
             </div>
           )}
-          {/* <button className="login-button" onClick={() => navigate("/login")}>Login</button> */}
-        </div>
+          </div>
 
-        {/* Mobile Hamburger Icon */}
+        
         <label htmlFor="menu-toggle" className="menu-icon">&#9776;</label>
       </div>
       <Modal
