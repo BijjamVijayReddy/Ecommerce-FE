@@ -10,7 +10,8 @@ const ForgotPassword = () => {
     const [isErr, setError] = useState(false);
     const [emailErr, setEmailEr] = useState("")
     const [passwordErr, setPasswordEr] = useState("")
-    const [confirmPasswordErr, setConfirmPasswordErr] = useState("")
+    const [confirmPasswordErr, setConfirmPasswordErr] = useState("");
+    const [isuser, setUser] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,7 +32,7 @@ const ForgotPassword = () => {
             console.log("password should be strong atleast 10 characters")
             setConfirmPasswordErr("password should be strong atleast 10 characters")
         }
- 
+
         if (Password !== confirmPassword) {
             setError(true)
             setPasswordEr("Password doesn't match")
@@ -65,7 +66,7 @@ const ForgotPassword = () => {
                     <small className='validate-color'>{isErr ? emailErr : null}</small>
 
                 </div>
-
+ 
                 <div className="input-group">
                     <label>Password</label>
                     <input className='input'
