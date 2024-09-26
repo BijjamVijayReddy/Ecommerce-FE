@@ -16,11 +16,11 @@ const AppRoutes = () => {
             <Route path='/sign-Up' element={<SignUp />} />
             <Route path='/forgot-Password' element={<ForgotPassword />} />
             <Route path='/dashboard' element={<Dashbaord />} />
-            <Route path='*' element={<Navigate to="/" />} />
-            <Route path="/dashboard" element={<Dashbaord />} />
+            {/* <Route path="/dashboard" element={<Dashbaord />} /> */}
             <Route path="/categories" element={<Categories />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path='*' element={<Navigate to="/" />} />
             </Routes>
     )
 }

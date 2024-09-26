@@ -1,0 +1,45 @@
+.main-content{
+    margin-top: 103px;
+}
+.prev-arrow, .next-arrow {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: -0.3;
+  transition: opacity 0.3s;
+}
+
+.prev-arrow:hover, .next-arrow:hover {
+  opacity: 1;
+}
+
+.index{
+    position: relative;
+    overflow: hidden;
+}
+.photos{
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    height: 400px;
+    margin-top: 5px;
+    background-attachment: fixed;
+}
+.active_wear{
+    color: white;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 30%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: relative;
+    top: 10px;
+    left: 10%;
+    margin-top: -60px;
+    margin-left: -115px;
+    transform: translateY(-50%);
+    z-index: 1;
+    font-weight: bold;
+}
