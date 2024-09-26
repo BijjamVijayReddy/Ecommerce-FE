@@ -106,10 +106,25 @@ const SignUp = () => {
         isAccepted: false,
       });
     } catch (err) {
-      if (err.message) {
-        errorToast("Account Already Exists.");
+      const statusCode = err?.status || err?.response?.status;
+      if (statusCode === 400) {
+        errorToast("Bad Request");
+      } else if (statusCode === 401) {
+        errorToast(" Please check your username or password.");
+      } else if (statusCode === 403) {
+        errorToast("Access Denied.");
+      } else if (statusCode === 404) {
+        errorToast("Resource Not Found.");
+      } else if (statusCode === 408) {
+        errorToast("Request Timeout. ");
+      } else if (statusCode === 500) {
+        errorToast("Internal Server Error");
+      } else if (statusCode === 503 || err.message === "Network Error") {
+        errorToast("Server is Currently Unavailable.");
+      } else if (err.code === 'ECONNREFUSED') {
+        errorToast("Connection Refused.");
       } else {
-        errorToast("An unexpected error occurred.");
+        errorToast("SomeThing Went Wrong");
       }
       setIsLoading(false);
     }

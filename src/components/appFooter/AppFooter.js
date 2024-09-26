@@ -14,7 +14,7 @@ const AppFooter = () => {
         <p className='image-txt1'>Swift Cart:Where Flavour Meets Delight. Every Bite Is a</p>
         <p className='image-txt1'>Journey Of Pure Enjoyment!</p>
 
-        <p className='image-txt2'>Copyright - 2024. Website Made By Greet Labs Pvt Ltd. All Rights Reserved </p>
+        <p className='image-txt2'>@Copyright - 2024. Website Made By Greet Labs Pvt Ltd. All Rights Reserved </p>
       </div>
 
 
@@ -31,11 +31,11 @@ const AppFooter = () => {
 
       <div>
         {/* Contact  US */}
-        <h1 className='contact'>Contact Us</h1>
+        <h1 className='contact'>Contact Us : </h1>
         <p className='number'>+91-9123456789</p>
         {/* Email  US */}
-        <h1 className='email'>Email</h1>
-        <p className='email-txt'>greetlabspvtltd@gmail.com</p>
+        <h1 className='email'>Email : </h1>
+        <p className='email-txt'>greetlabs@gmail.com</p>
       </div>
 
       <div>

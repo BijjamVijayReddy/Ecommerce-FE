@@ -76,19 +76,38 @@ const Login = () => {
             const result = await fetchApi("POST", "/login", data);
 
             if (result && result.token) {
-                sessionService.setToken(result.token)
+                sessionService.setToken(result.token);
+                navigate("/dashboard");
             }
-            navigate("/dashboard");
         } catch (err) {
-            console.log(err);
-            if (err) {
-                console.log(err);
-                errorToast("Bad Credentials");
+            const statusCode = err?.status || err?.response?.status;
+
+            console.log("Error status:", statusCode);
+            console.log("Full error:", err);
+
+            if (statusCode === 400) {
+                errorToast("Bad Request");
+            } else if (statusCode === 401) {
+                errorToast(" Please check your username or password.");
+            } else if (statusCode === 403) {
+                errorToast("Access Denied.");
+            } else if (statusCode === 404) {
+                errorToast("Resource Not Found.");
+            } else if (statusCode === 408) {
+                errorToast("Request Timeout. ");
+            } else if (statusCode === 500) {
+                errorToast("Internal Server Error");
+            } else if (statusCode === 503 || err.message === "Network Error") {
+                errorToast("Server is Currently Unavailable.");
+            } else if (err.code === 'ECONNREFUSED') {
+                errorToast("Connection Refused.");
             } else {
-                errorToast("An unexpected error occurred.");
+                errorToast("SomeThing Went Wrong");
             }
+
             setIsLoading(false);
         }
+
     };
 
 
@@ -134,7 +153,7 @@ const Login = () => {
                     </div>
 
 
-                    <p className='signupnow'>Don't have an Account ? <span className='signup' onClick={() => navigate("/sign-Up")}>Sign up now ?</span></p>
+                    <p className='signupnow'>Don't have an Account ? <span className='signup' onClick={() => navigate("/sign-Up")}>Sign Up Now ?</span></p>
                     <br />
                     <button type="submit" className="login-button">{isLoading ? (
                         <>
@@ -144,7 +163,7 @@ const Login = () => {
                     ) : "Submit"}</button>
 
 
-                    <p className='forgot-password' onClick={() => navigate("/forgot-Password")}><span className="text-[black]">Click Here To </span> Reset Your Password? </p>
+                    <p className='forgot-password' onClick={() => navigate("/forgot-Password")}><span className="text-[black] ">Click Here To </span> Reset Your Password? </p>
 
                 </form>
             </div>
