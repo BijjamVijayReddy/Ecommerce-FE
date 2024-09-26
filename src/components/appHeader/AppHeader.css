@@ -97,20 +97,7 @@
   align-items: center;
 }
 
-/* .login-button {
-  padding: 8px 16px;
-  background-color:brown;
-  color: white;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-} */
 
-.login-button:hover {
-  background-color: brown;
-}
-
-/* Responsive Design */
 .menu-toggle {
   display: none;
 }
@@ -161,11 +148,11 @@
   text-align: center;
 }
 
-/* .profile-dropdown ul li:hover {
+ /* .profile-dropdown ul li:hover {
   background-color:  lightgray;
-  border-radius: 5px; */
+  border-radius: 5px;  */
 /* color: #fff; */
-
+ 
 .browne {
   background: brown;
   border-radius: 5px;
@@ -174,8 +161,6 @@
   margin-top: 1rem;
 
 }
-
-
 
 @media (max-width: 768px)and (max-width: 992px) {
   .nav {
@@ -249,11 +234,7 @@
     font-size: 18px;
   }
 
-  .login-button {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
+  
   .cart-icon {
     font-size: 20px;
   }

@@ -1,0 +1,46 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  margin-top: 500px;
+}
+
+.footer-section {
+ padding: 10px;
+}
+
+.footer-section h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.footer-section p {
+  font-size: 1em;
+  color: #555;
+}
+.footer-section .icon {
+  width: 35px;  
+  height: 35px;
+  border-radius: 50%; 
+  background-color:brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px auto;
+  color: white; 
+}
+
+
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .footer-section {
+    margin-bottom: 20px;
+  }
+}
