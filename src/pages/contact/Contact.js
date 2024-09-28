@@ -1,23 +1,8 @@
-// import React from 'react';
-// import AppHeader from '../../components/appHeader/AppHeader';
-// import AppFooter from '../../components/appFooter/AppFooter';
-
-// const Contact = () => {
-//   return(
-//     <div>
-//       <AppHeader/>
-//       <AppFooter/>
-//     </div>
-//   )
-// };
-// export default Contact;
-
-
 
 import AppHeader from '../../components/appHeader/AppHeader';
 import AppFooter from '../../components/appFooter/AppFooter';
 import React, { useState } from "react";
-import "./ContactForm.css";
+import "./Contact.css";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -36,7 +21,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     console.log("Form Data Submitted: ", formData);
   };
 
@@ -63,6 +48,8 @@ const ContactForm = () => {
               +91-9123456789</p>
           </div>
         </div>
+
+
         <form className="contact-form" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name">Your Name :<p1 className="star">*</p1> </label>
@@ -109,10 +96,6 @@ const ContactForm = () => {
           </div>
           <button className="submit">Send Message</button>
         </form>
-        {/* <AppHeader/> */}
-
-
-        {/* <AppFooter/> */}
       </div>
       <AppFooter />
     </div>
