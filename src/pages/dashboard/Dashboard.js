@@ -5,6 +5,7 @@ import Slider from '../../components/slider/Slider'
 import AppInfo from '../../components/AppInfo/AppInfo'
 import NewsLetter from '../../components/NewsLetter/NewsLetter'
 
+
 const Dashboard = () => {
     return (
         <div>

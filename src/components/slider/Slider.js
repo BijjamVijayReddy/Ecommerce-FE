@@ -13,10 +13,6 @@ import img17 from '../../assests/img17.jpg'
 
 
 
-
-
-
-
 const user_img = [
   { userImg: img26, text: "Active Wear" },
   { userImg: img24, text: "Active Wear" },
