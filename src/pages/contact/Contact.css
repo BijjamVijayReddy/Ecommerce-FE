@@ -3,8 +3,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-family: Arial, sans-serif;
-  margin-top: 100px;
+  font-family: 'Lexend', sans-serif;
+    margin-top: 100px;
   padding: 0 20px; 
   }
 
@@ -87,7 +87,7 @@
   font-size: 13px;
   cursor: pointer;
   width: 18%;
-  margin-top: -10px;
+  margin-top: 15px;
   
 }
 
