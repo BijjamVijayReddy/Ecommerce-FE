@@ -78,27 +78,27 @@ const About = () => {
 
         <div className='main_view'>
 
-          <div className='views'>
+          <div className='views1'>
             500k
             <p className='txt20'>Shopers</p>
           </div>
 
 
-          <div className='views'>
+          <div className='views2'>
             4,500+
-            <p className='txt20'>Cites</p>
+            <p className='txt21'>Cites</p>
           </div>
 
 
-          <div className='views'>
-            40k
-            <p className='txt20'>Stores</p>
+          <div className='views3'>
+            40k+
+            <p className='txt22'>Stores</p>
           </div>
 
 
-          <div className='views'>
+          <div className='views4'>
             650+
-            <p className='txt20'>Retail Brands</p>
+            <p className='txt23'>Retail Brands</p>
           </div>
 
         </div>
