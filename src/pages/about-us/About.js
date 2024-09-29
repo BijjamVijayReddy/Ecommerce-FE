@@ -12,22 +12,23 @@ const About = () => {
       <div className='first'>
         <div className='main_about01'>
           <h4 className='abc'>The Future of</h4>
-          <h4 className='abc1'>Grocery Delivery:</h4>
-          <small className='txt_1'>By powering the future grocery with</small>
-          <br />
-          <small className='txt_2'>our retail partners, we give everyone</small>
-          <br />
-          <small className='txt_3'>access to the food they love and more</small>
-          <br />
-          <small className='txt_4'>time to enjoy it together.</small>
+          <div className='first2'>
+            <h4 className='abc1'>Grocery Delivery:</h4>
+
+            <small className='txt_1'>By powering the future grocery with</small>
+            <br />
+            <small className='txt_2'>our retail partners, we give everyone</small>
+            <br />
+            <small className='txt_3'>access to the food they love and more</small>
+            <br />
+            <small className='txt_4'>time to enjoy it together.</small>
+          </div>
         </div>
 
         <div className='main_about02'>
           <img className='photo' src={about} alt="Grocery Delivery" />
         </div>
       </div>
-
-
 
       <div className='main-txt'>
         <p>Ready to get started?</p>
