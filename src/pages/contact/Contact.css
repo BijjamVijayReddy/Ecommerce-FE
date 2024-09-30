@@ -1,0 +1,149 @@
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: 'Lexend', sans-serif;
+    margin-top: 100px;
+  padding: 0 20px; 
+  }
+
+.contact-info {
+  margin-bottom: 20px;
+  margin-left: 120px;
+  margin-top: 70px;
+  flex: 1 1 200px;
+  margin-right: 10px;
+  margin-top: 90px;
+}
+
+.contact-info h2 {
+  font-size: 25px;
+  margin-bottom: 10px; 
+  color: brown;
+  font-weight: bold;
+}
+
+.contact-info p {
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+  color: #707070;
+}
+
+.contact-details p   {
+  display: flex;
+  gap:10px;
+  margin-bottom: 0.5rem;
+  margin-left: -12px;
+}
+
+.contact-form {
+  width: 50%;
+ display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  margin-left: 60px;
+  margin-top: 30px;
+  position: relative;
+  
+}
+.star{
+  color: brown;
+}
+.contact-form div {
+  margin-bottom: 1rem;
+  width: 80%;
+  
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 80%;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+.contact-form textarea{
+  padding: 30px;
+}
+.contact-form input,
+.contact-form textarea:focus{
+  color: brown;
+}
+
+.contact-form button {
+  padding: 5px 5px;
+  background-color:brown;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  width: 18%;
+  margin-top: 15px;
+  
+}
+
+.contact-form button:hover {
+  background-color: brown;
+}
+
+/* Responsive Design for Tablets and Small Screens */
+@media (max-width: 1024px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center; 
+
+  .contact-info,
+  .contact-form {
+    width: 100%; 
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 20px; 
+  }
+
+  .contact-info {
+    margin-top: 30px;
+  }
+
+  .contact-form {
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+
+   .contact-form input,
+  .contact-form textarea {
+    width: 120%; 
+  }
+  
+.contact-form button {
+    width: 30%; 
+    min-width: 0; 
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 0 10px; 
+  }
+
+  .contact-info h2 {
+    font-size: 20px; 
+  }
+
+  .contact-info p,
+  .contact-details p,
+  .contact-form label {
+    font-size: 12px; 
+  }
+  
+}
+}
