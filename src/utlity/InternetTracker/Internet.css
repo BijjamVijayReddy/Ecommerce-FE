@@ -1,0 +1,73 @@
+
+.offline-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+  .offline-content {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .header1 {
+    position:absolute;
+    top: 20px;
+    left: 20px;
+  }
+ .logo_broken {
+    width: 150px; 
+    margin-bottom: 20px;
+  }
+  .broken-logo {
+    width: 150px; 
+    margin-left: 140px;
+    display: flex;
+}
+  
+  .offline {
+    font-size: 24px;
+    /* margin-top: 20px; */
+    color: #333;
+  }
+  
+  .reconnected {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .retry-button {
+    margin-top: 20px;
+    padding: 5px 20px;
+    /* font-size: 16px; */
+    background-color:brown;
+    color: white;
+   border-radius: 5px;
+    cursor: pointer;
+    margin-right: 30px;
+  }
+  
+  .retry-button:hover {
+    background-color:light brown;
+  }
+  
+  @media (max-width: 768px) {
+    
+   .broken-logo{
+    position: relative;
+    margin-left:120px;
+   }
+    .offline {
+      font-size: 20px;
+    }
+  
+    .reconnected  {
+      font-size: 14px;
+    }
+  
+    .retry-button {
+      font-size: 14px;
+      padding: 5px 16px;
+    }
+  }
