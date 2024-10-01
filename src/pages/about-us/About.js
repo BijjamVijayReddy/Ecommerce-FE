@@ -74,7 +74,7 @@ const About = () => {
         <h1 className='txt1' >Trusted by retailers.</h1>
         <h1 className='txt2'>Loved by customres.</h1>
         <p className='txt1' >We give everyone access to the food they</p>
-        <p className='txt2'>love and more time to enjoy it together </p>
+        <p className='txt2'>love and more time to enjoy it together.</p>
 
 
         <div className='main_view'>
