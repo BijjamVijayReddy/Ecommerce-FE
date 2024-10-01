@@ -21,7 +21,7 @@ const Internet = () => {
                 <h1 className='offline'>You appear to be offline</h1>
                 <p className='reconnected'>You can't use the service until you're connected to the internet.</p>
                 <button className="retry-button" onClick={handleRetry}>
-                    Retry
+                    Reload
                 </button>
             </div>
         </div>
