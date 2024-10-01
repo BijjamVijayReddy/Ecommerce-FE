@@ -41,7 +41,10 @@ const ContactForm = () => {
     if (!formData.name.trim()) {
       validationErrors.name = "Name is required";
     }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    else if (!/^[A-Za-z\s]+$/.test(formData.name)) {
+      validationErrors.name = "Name should only contain letters";
+  }
+    const emailRegex = /^[^\s@]+@gmail\.com$/;
     if (!formData.email.trim()) {
       validationErrors.email = "Email is required";
     } else if (!emailRegex.test(formData.email)) {
