@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 1px;
     box-sizing: border-box;
-    
+
 }
+
 .main_about {
     margin-top: 240px;
     overflow: hidden;
@@ -53,7 +54,7 @@
 .main-txt {
 
     margin-top: 80px;
-    margin-left: 190px;
+    margin-left: 126px;
     font-size: 26px;
 
 }
@@ -66,32 +67,22 @@
 }
 
 
-.first2{
+.first2 {
     font-size: 42px;
     margin-top: -910px;
     margin-left: 170px;
 }
 
-/* 
-.abc1 {
-    font-size: 42px;
-    margin-top: -880px;
-    margin-left: 170px;
-} */
-
-
 
 .txt_1 {
     font-size: 19px;
     margin-left: 8px;
-    /* line-height: 9; */
+    margin-top: 20px;
 }
 
 .txt_2 {
     font-size: 19px;
     margin-left: 8px;
-    line-height: 0.7;
-
 }
 
 .txt_3 {
@@ -103,6 +94,7 @@
     font-size: 19px;
     margin-left: 8px;
 }
+
 
 
 
@@ -172,7 +164,7 @@
 }
 
 .card-button:hover {
-    background-color:brown;
+    background-color: brown;
 }
 
 .text_5 {
@@ -197,7 +189,7 @@
 }
 
 .help-center .txt {
-    color:brown;
+    color: brown;
 }
 
 .main_about2 {
@@ -269,38 +261,90 @@
     margin-left: 10px;
 }
 
-.main_view .views1{
+.main_view .views1 {
     margin-right: 140px;
 }
 
-.main_view .views2{
-    margin-right:-150px;
+.main_view .views2 {
+    margin-right: -150px;
 }
 
-.main_view .views3{
+.main_view .views3 {
     margin-right: 130px;
 }
 
 .views1 .txt20 {
     font-size: 20px;
     margin-top: -8px;
-    /* color: #fff; */
 }
 
 .views2 .txt21 {
     font-size: 20px;
     margin-top: -8px;
-    /* color: #fff; */
 }
 
 .views3 .txt22 {
     font-size: 20px;
     margin-top: -8px;
-    /* color: #fff; */
 }
 
 .views4 .txt23 {
     font-size: 20px;
     margin-top: -8px;
-    /* color: #fff; */
+}
+
+
+/* resp */
+
+
+/* Mobile Styles (small devices like phones) */
+@media (max-width: 600px) {
+    .first {
+        flex-direction: column;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .main_about01,
+    .main_about02 {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .main_about02 .photo {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .abc,
+    .first2 {
+        font-size: 32px;
+        margin-left: 20px;
+    }
+
+    .txt_1,
+    .txt_2,
+    .txt_3,
+    .txt_4 {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    .help-center {
+        margin-left: 20px;
+        font-size: 18px;
+    }
+
+    .main_about2 .views1,
+    .main_about2 .views2,
+    .main_about2 .views3,
+    .main_about2 .views4 {
+        font-size: 40px;
+        margin-left: 0;
+
+    }
 }

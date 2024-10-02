@@ -9,19 +9,20 @@ const About = () => {
     <div className='main_about'>
       <AppHeader />
 
+
       <div className='first'>
         <div className='main_about01'>
           <h4 className='abc'>The Future of</h4>
           <div className='first2'>
             <h4 className='abc1'>Grocery Delivery:</h4>
 
-            <small className='txt_1'>By powering the future grocery with</small>
-            <br />
-            <small className='txt_2'>our retail partners, we give everyone</small>
-            <br />
-            <small className='txt_3'>access to the food they love and more</small>
-            <br />
-            <small className='txt_4'>time to enjoy it together.</small>
+            <p className='txt_1'>By powering the future grocery with</p>
+          
+            <p className='txt_2'>our retail partners, we give everyone</p>
+         
+            <p className='txt_3'>access to the food they love and more</p>
+            
+            <p className='txt_4'>time to enjoy it together.</p>
           </div>
         </div>
 
