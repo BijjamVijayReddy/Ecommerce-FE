@@ -5,7 +5,7 @@ import Helmet from "../../components/helmet/Helmet"
 import { useNavigate } from 'react-router-dom';
 import { fetchApi } from '../../services/fetchApi';
 import SpinnerLoader from '../../components/spinLoader/SpinLoader';
-import ErrorToast, { errorToast } from '../../components/toast/ErrorToast';
+import CustomToast from '../../components/toast/Toast';
 import sessionService from '../../services/sessionServices';
 
 const eyeSvg = (<svg xmlns="http://www.w3.org/2000/svg" fill="none" style={{ color: "brown" }} viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -80,31 +80,7 @@ const Login = () => {
                 navigate("/dashboard");
             }
         } catch (err) {
-            const statusCode = err?.status || err?.response?.status;
-
-            console.log("Error status:", statusCode);
-            console.log("Full error:", err);
-
-            if (statusCode === 400) {
-                errorToast("Bad Request");
-            } else if (statusCode === 401) {
-                errorToast(" Please check your username or password.");
-            } else if (statusCode === 403) {
-                errorToast("Access Denied.");
-            } else if (statusCode === 404) {
-                errorToast("Resource Not Found.");
-            } else if (statusCode === 408) {
-                errorToast("Request Timeout. ");
-            } else if (statusCode === 500) {
-                errorToast("Internal Server Error");
-            } else if (statusCode === 503 || err.message === "Network Error") {
-                errorToast("Server is Currently Unavailable.");
-            } else if (err.code === 'ECONNREFUSED') {
-                errorToast("Connection Refused.");
-            } else {
-                errorToast("SomeThing Went Wrong");
-            }
-
+            console.log("Error occurred:", err);
             setIsLoading(false);
         }
 
@@ -113,13 +89,13 @@ const Login = () => {
 
     return (
         <Helmet title="Login">
-            <ErrorToast />
+            <CustomToast />
             <div className='login-container'>
-                <img src={logo} alt="logo" className='logo' />
+                <img src={logo} alt="logo" className='logo-login' />
                 <h1 className='Login-shift'>Log in to Shift Cart</h1>
                 <p className='Login-shift1'>Welcome Back Please Log-in to Continue</p>
                 <br />
-                <form onSubmit={handleSubmit} className="login-form">
+                <form onSubmit={handleSubmit} className="login-form" >
                     <div className="input-group">
                         <label>Email Address :</label>
                         <input className='input'
