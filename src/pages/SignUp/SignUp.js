@@ -4,10 +4,8 @@ import logo from "../../assests/logo.png";
 import Helmet from '../../components/helmet/Helmet';
 import { useNavigate } from 'react-router-dom';
 import { fetchApi } from '../../services/fetchApi';
-import ErrorToast, { errorToast } from '../../components/toast/ErrorToast';
-import SuccessToast, { sucessToast } from '../../components/toast/SucessToast';
 import SpinnerLoader from '../../components/spinLoader/SpinLoader';
-
+import CustomToast, { showToast } from '../../components/toast/Toast';
 
 
 const eyeSvg = (
@@ -94,7 +92,7 @@ const SignUp = () => {
     try {
       const result = await fetchApi('POST', "/register", data);
       console.log(JSON.stringify(result));
-      sucessToast("Data is Saved");
+      showToast("Data is Saved", 'success');
       setFormData({
         id: null,
         firstName: "",
@@ -106,26 +104,7 @@ const SignUp = () => {
         isAccepted: false,
       });
     } catch (err) {
-      const statusCode = err?.status || err?.response?.status;
-      if (statusCode === 400) {
-        errorToast("Bad Request");
-      } else if (statusCode === 401) {
-        errorToast(" Please check your username or password.");
-      } else if (statusCode === 403) {
-        errorToast("Access Denied.");
-      } else if (statusCode === 404) {
-        errorToast("Resource Not Found.");
-      } else if (statusCode === 408) {
-        errorToast("Request Timeout. ");
-      } else if (statusCode === 500) {
-        errorToast("Internal Server Error");
-      } else if (statusCode === 503 || err.message === "Network Error") {
-        errorToast("Server is Currently Unavailable.");
-      } else if (err.code === 'ECONNREFUSED') {
-        errorToast("Connection Refused.");
-      } else {
-        errorToast("SomeThing Went Wrong");
-      }
+      console.log("Error occurred:", err);
       setIsLoading(false);
     }
   };
@@ -133,8 +112,7 @@ const SignUp = () => {
 
   return (
     <Helmet title="Sign-Up">
-      <ErrorToast />
-      <SuccessToast />
+      <CustomToast />
       <form className="signup-form" onSubmit={handleSubmit}>
         <img src={logo} alt="logo" className="logo_signup" />
         <h2 className="cart">Sign up for Swift Cart today!</h2>
