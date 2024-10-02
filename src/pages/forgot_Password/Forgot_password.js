@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import "./ForgotPassword.css";
 import logo from "../../assests/logo.png";
 import { fetchApi } from '../../services/fetchApi';
-import ErrorToast, { errorToast } from '../../components/toast/ErrorToast';
+import CustomToast, { showToast } from '../../components/toast/Toast';
 import SpinnerLoader from '../../components/spinLoader/SpinLoader';
 import Helmet from '../../components/helmet/Helmet';
 
@@ -16,12 +16,20 @@ const ForgotPassword = () => {
     const [emailErr, setEmailEr] = useState("");
     const [passwordErr, setPasswordEr] = useState("");
     const [confirmPasswordErr, setConfirmPasswordErr] = useState("");
-    const [isuser, setUser] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [istoken, setToken] = useState(null);
-    console.log("isToken", istoken);
+    const [istoken, setToken] = useState("");
 
-    // Handler for requesting the token (forgot password)
+    // Function to handle Enter key press
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter") {
+            if (!istoken) {
+                handleTokenRequest(e);
+            } else {
+                handlePasswordReset(e);
+            }
+        }
+    };
+
     const handleTokenRequest = async (e) => {
         e.preventDefault();
 
@@ -38,8 +46,7 @@ const ForgotPassword = () => {
             const result = await fetchApi("POST", "/forgot-password", emailData);
 
             if (result && result.token) {
-                setUser(true);
-                setToken(result.token); // Store token for later use
+                setToken(result.token);
             }
         } catch (err) {
             handleApiErrors(err);
@@ -48,7 +55,6 @@ const ForgotPassword = () => {
         }
     };
 
-    // Handler for resetting the password (after token is received)
     const handlePasswordReset = async (e) => {
         e.preventDefault();
 
@@ -68,11 +74,15 @@ const ForgotPassword = () => {
 
         setIsLoading(true);
         const passwordPayload = JSON.stringify({ userPassword: Password });
-        const config = istoken ? { headers: { Authorization: `Bearer ${istoken}` } } : {};
+        const config = { headers: { Authorization: istoken } };
 
         try {
             const resetResult = await fetchApi("POST", "/change-password", passwordPayload, config);
-            console.log("Password reset successful:", resetResult);
+            console.log(resetResult)
+            showToast("Password Updated Successfully", 'success');
+            setTimeout(() => {
+                navigate("/")
+            }, 8000)
         } catch (err) {
             handleApiErrors(err);
         } finally {
@@ -80,38 +90,19 @@ const ForgotPassword = () => {
         }
     };
 
-    // Function to handle different API errors
     const handleApiErrors = (err) => {
-        const statusCode = err?.status || err?.response?.status;
-        console.error("Error status:", statusCode, "Error:", err);
-        if (statusCode === 400) {
-            errorToast("Bad Request");
-        } else if (statusCode === 401) {
-            errorToast("Please check your username or password.");
-        } else if (statusCode === 403) {
-            errorToast("Access Denied.");
-        } else if (statusCode === 404) {
-            errorToast("User Not Found with Email.");
-        } else if (statusCode === 408) {
-            errorToast("Request Timeout.");
-        } else if (statusCode === 500) {
-            errorToast("Internal Server Error");
-        } else if (statusCode === 503 || err.message === "Network Error") {
-            errorToast("Server is Currently Unavailable.");
-        } else {
-            errorToast("Something went wrong");
-        }
+        console.log("Error occurred:", err);
     };
 
     return (
         <Helmet title="Forgot-Password">
-            <ErrorToast />
+            <CustomToast />
             <div className='login-container'>
                 <img src={logo} alt="logo" className='logo' />
                 <h1 className='Login-shift'>Forgot Password for Shift Cart</h1>
                 <p className='Login-shift1'>Reset Your Password for Shift Cart</p>
                 <br />
-                <form className="login-form">
+                <form className="login-form" onKeyDown={handleKeyPress}>
                     <div className="input-group">
                         <label>Email Address :</label>
                         <input
@@ -127,20 +118,20 @@ const ForgotPassword = () => {
                     </div>
 
                     {!istoken && (
-                        <button type="button" onClick={handleTokenRequest} className="login-button" disabled={isLoading}>
+                        <button type="button" onClick={handleTokenRequest} className="login-btn" disabled={isLoading}>
                             {isLoading ? (
                                 <>
                                     <SpinnerLoader isLoading={isLoading} />
                                     <span style={{ marginLeft: '8px' }}>Loading...</span>
                                 </>
-                            ) : "Request Token"}
+                            ) : "Submit"}
                         </button>
                     )}
 
                     {istoken && (
                         <>
                             <div className="input-group">
-                                <label>Password</label>
+                                <label>Password : </label>
                                 <input
                                     className='input'
                                     type="password"
@@ -153,7 +144,7 @@ const ForgotPassword = () => {
                             </div>
 
                             <div className="input-group">
-                                <label>Confirm Password</label>
+                                <label>Confirm Password : </label>
                                 <input
                                     className='input'
                                     type="password"
@@ -165,7 +156,7 @@ const ForgotPassword = () => {
                                 <small className='validate-color'>{isErr ? confirmPasswordErr : null}</small>
                             </div>
 
-                            <button type="button" onClick={handlePasswordReset} className="login-button" disabled={isLoading}>
+                            <button type="button" onClick={handlePasswordReset} className="login-btn" disabled={isLoading}>
                                 {isLoading ? (
                                     <>
                                         <SpinnerLoader isLoading={isLoading} />
