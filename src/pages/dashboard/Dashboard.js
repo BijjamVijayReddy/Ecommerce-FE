@@ -6,7 +6,6 @@ import AppInfo from '../../components/AppInfo/AppInfo'
 import NewsLetter from '../../components/NewsLetter/NewsLetter'
 import Helmet from '../../components/helmet/Helmet'
 
-
 const Dashboard = () => {
     return (
         <Helmet title="Dashboard">
