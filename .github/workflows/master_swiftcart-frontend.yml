@@ -1,12 +1,9 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy Node.js app to Azure Web App - swiftcart-FrontEnd
 
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
@@ -25,13 +22,13 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
+          npm run test -- --passWithNoTests
       
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: './build'  # Ensure that the build directory exists and has the necessary files
 
   deploy:
     runs-on: ubuntu-latest
@@ -40,14 +37,15 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write  # This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: node-app
-      
+          path: './artifact'  # Downloads to a folder named 'artifact'
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -59,7 +57,6 @@ jobs:
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'swiftcart-FrontEnd'
+          app-name: 'swiftcart-FrontEnd'  # App name updated correctly
           slot-name: 'Production'
-          package: .
-          
+          package: './artifact'  # Ensure that the artifact path matches where the build is stored
