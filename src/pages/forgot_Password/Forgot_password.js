@@ -7,7 +7,6 @@ import CustomToast, { showToast } from '../../components/toast/Toast';
 import SpinnerLoader from '../../components/spinLoader/SpinLoader';
 import Helmet from '../../components/helmet/Helmet';
 
-
 const ForgotPassword = () => {
     const navigate = useNavigate();
     const [userEmail, setuserEmail] = useState('');
