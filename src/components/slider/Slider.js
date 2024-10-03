@@ -1,5 +1,5 @@
 import React from "react";
-import css from './Slider.css';
+import './Slider.css';
 import SSlider from "react-slick";
 import img26 from '../../assests/Img26.webp'
 import img24 from '../../assests/Img24.webp'
@@ -10,11 +10,6 @@ import img16 from '../../assests/img16.jpg'
 import img15 from '../../assests/img15.jpg'
 import img18 from '../../assests/img18.jpg'
 import img17 from '../../assests/img17.jpg'
-
-
-
-
-
 
 
 const user_img = [

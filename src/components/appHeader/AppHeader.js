@@ -12,12 +12,12 @@ import Modal from '../modal/Modal';
 import sessionService from '../../services/sessionServices';
 
 const AppHeader = () => {
-  const [showLogoutModal, setShowLogoutModal] = useState(false); 
-   const navigate = useNavigate()
+  const [showLogoutModal, setShowLogoutModal] = useState(false);
+  const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
-  // Add scroll event listener
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -29,7 +29,6 @@ const AppHeader = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Clean up the event listener when component unmounts
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -39,20 +38,20 @@ const AppHeader = () => {
 
   };
   const handleLogoutClick = () => {
-    setShowProfileDropdown(false); 
-    setShowLogoutModal(true); 
+    setShowProfileDropdown(false);
+    setShowLogoutModal(true);
   };
-  
+
   const handleConfirmLogout = () => {
-    sessionService.clearToken(); 
-    setShowLogoutModal(false); 
-    navigate('/login'); 
+    sessionService.clearToken();
+    setShowLogoutModal(false);
+    navigate('/login');
   };
   const handleCloseModal = () => {
-    setShowLogoutModal(false); 
+    setShowLogoutModal(false);
   };
-  
-  
+
+
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
@@ -65,23 +64,23 @@ const AppHeader = () => {
         <nav className="nav">
           <ul>
             <li><NavLink to="/dashboard" className={({ isActive }) => isActive ? " text-[brown] font-bold" : ""}>Home</NavLink></li>
-            <li><NavLink to="/categories" className={({ isActive }) => isActive ? " text-[brown] font-bold" :""}>Categories</NavLink></li>
-            <li><NavLink to="/about" className={({ isActive }) => (isActive ? " text-[brown] font-bold": "")}>About Us</NavLink></li>
-            <li><NavLink to="/contact"className={({ isActive }) => isActive ? " text-[brown] font-bold" : ""}>Contact Us</NavLink></li>
+            <li><NavLink to="/categories" className={({ isActive }) => isActive ? " text-[brown] font-bold" : ""}>Categories</NavLink></li>
+            <li><NavLink to="/about" className={({ isActive }) => (isActive ? " text-[brown] font-bold" : "")}>About Us</NavLink></li>
+            <li><NavLink to="/contact" className={({ isActive }) => isActive ? " text-[brown] font-bold" : ""}>Contact Us</NavLink></li>
           </ul>
         </nav>
 
         <div className="cart-login">
           < div className="shopping-cart-icon">
-          <Link to="/cart">
-            <FontAwesomeIcon icon={faShoppingCart} />
+            <Link to="/cart">
+              <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
             <span className="cart-count">0</span>
-            </div>
+          </div>
           <div className="profile-icon" onClick={toggleProfileDropdown}>
             <FontAwesomeIcon icon={faUserCircle} size="2x" />
           </div>
-          {showProfileDropdown && ( 
+          {showProfileDropdown && (
             <div className="profile-dropdown">
               <ul>
                 <li onClick={() => navigate('/MyProfile')}>MyProfile</li>
@@ -91,9 +90,9 @@ const AppHeader = () => {
               </ul>
             </div>
           )}
-          </div>
+        </div>
 
-        
+
         <label htmlFor="menu-toggle" className="menu-icon">&#9776;</label>
       </div>
       <Modal

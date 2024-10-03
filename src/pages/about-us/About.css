@@ -1,0 +1,414 @@
+.main_about {
+    margin-top: 150px;
+    overflow: hidden;
+}
+
+
+.first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+
+}
+
+.main_about01 {
+    flex: 1;
+    max-width: 50%;
+    padding-right: 20px;
+}
+
+.main_about02 {
+    flex: 1;
+    max-width: 50%;
+}
+
+.main_about02 .photo {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.card .logo_one {
+    margin-left: 65px;
+}
+
+.card .logo_two {
+    margin-left: 65px;
+}
+
+.card .logo_three {
+    margin-left: 65px;
+}
+
+.main-txt {
+    color: brown;
+    margin-top: 80px;
+    margin-left: 126px;
+    font-size: 22px;
+
+}
+
+
+.abc {
+    font-size: 40px;
+    margin-bottom: 900px;
+    margin-left: 170px;
+    color: brown;
+}
+
+
+.first2 {
+    font-size: 40px;
+    margin-top: -910px;
+    margin-left: 170px;
+}
+
+
+.txt_1 {
+    font-size: 19px;
+    margin-left: 8px;
+    margin-top: 20px;
+}
+
+.txt_2 {
+    font-size: 19px;
+    margin-left: 8px;
+}
+
+.txt_3 {
+    font-size: 19px;
+    margin-left: 8px;
+}
+
+.txt_4 {
+    font-size: 19px;
+    margin-left: 8px;
+}
+
+
+
+
+.main_about1 {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px;
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 2px;
+    font-family: sans-serif;
+}
+
+.main_about1 .txt_size {
+    font-size: 15px;
+    margin-top: 20px;
+}
+
+
+.card {
+    background-color: #edf3f7;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s;
+    font-size: 1.3rem;
+
+}
+
+.logo_one {
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #00171f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+.card-button:hover {
+    background-color: brown;
+}
+
+.text_5 {
+    margin-right: 160px;
+    margin-top: -12px;
+}
+
+.text_6 {
+    margin-right: 160px;
+    margin-top: -12px;
+}
+
+.text_7 {
+    margin-right: 110px;
+    margin-top: -12px;
+}
+
+.help-center {
+    margin-left: 122px;
+    margin-bottom: 100px;
+    font-size: 22px;
+}
+
+.help-center .txt {
+    color: brown;
+}
+
+.main_about2 {
+    background-color: brown;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.main_about2 .txt1 {
+    margin-top: 40px;
+    margin-left: 160px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.main_about2 .txt2 {
+    margin-top: -15px;
+    margin-left: 160px;
+    font-size: 30px;
+    color: #fff;
+}
+
+.main_about2 p.txt1 {
+    margin-top: 15px;
+    margin-left: 160px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.main_about2 p.txt2 {
+    margin-top: -6px;
+    margin-left: 160px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.main_view {
+    display: flex;
+    margin-right: 50px;
+    margin-left: 38px;
+    margin-top: -30px;
+    padding: 20px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.main_about2 .views1 {
+    font-size: 60px;
+    margin-top: 60px;
+    margin-left: 100px;
+}
+
+
+.main_about2 .views2 {
+    font-size: 60px;
+    margin-top: 60px;
+    margin-left: 10px;
+}
+
+.main_about2 .views3 {
+    font-size: 60px;
+    margin-top: 60px;
+    margin-left: 250px;
+}
+
+.main_about2 .views4 {
+    font-size: 60px;
+    margin-top: 60px;
+    margin-left: 10px;
+}
+
+.main_view .views1 {
+    margin-right: 140px;
+}
+
+.main_view .views2 {
+    margin-right: -150px;
+}
+
+.main_view .views3 {
+    margin-right: 130px;
+}
+
+.views1 .txt20 {
+    font-size: 20px;
+    margin-top: -8px;
+}
+
+.views2 .txt21 {
+    font-size: 20px;
+    margin-top: -8px;
+}
+
+.views3 .txt22 {
+    font-size: 20px;
+    margin-top: -8px;
+}
+
+.views4 .txt23 {
+    font-size: 20px;
+    margin-top: -8px;
+}
+
+
+/* resp */
+
+
+/* Mobile Styles (small devices like phones) */
+@media (max-width: 600px) {
+    .first {
+        flex-direction: column;
+        margin-left: -3px;
+        margin-right: 20px;
+    }
+
+    .main_about01,
+    .main_about02 {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .main_about02 .photo {
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+        margin: 0 auto;
+
+    }
+
+    .abc,
+    .first2 {
+        font-size: 32px;
+        margin-left: -50px;
+    }
+
+    .txt_1,
+    .txt_2,
+    .txt_3,
+    .txt_4 {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    .help-center {
+        margin-left: 20px;
+        font-size: 18px;
+    }
+
+    .main_about2 .views1,
+    .main_about2 .views2,
+    .main_about2 .views3,
+    .main_about2 .views4 {
+        font-size: 40px;
+        margin-left: 0;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .main_about1 {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    .main-txt {
+        margin-left: 50px;
+    }
+
+    .card {
+        width: 100%;
+        margin-top: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main_view {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    /* Scale down font sizes */
+    .txt1,
+    .txt2 {
+        font-size: 1.5em;
+
+    }
+
+    .views1,
+    .views2,
+    .views3,
+    .views4 {
+        font-size: 1.8em;
+        width: 150px;
+        /* Slightly smaller for medium screens */
+    }
+}
+
+/* Adjustments for mobile devices */
+@media (max-width: 480px) {
+    .main_about2 {
+        padding: 20px;
+    }
+
+    .txt1,
+    .txt2 {
+        font-size: 1.2em;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Stack view items vertically */
+    .main_view {
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    .views1,
+    .views2,
+    .views3,
+    .views4 {
+        font-size: 1.5em;
+        width: 100%;
+        /* Full width on small screens */
+        max-width: 300px;
+    }
+}
