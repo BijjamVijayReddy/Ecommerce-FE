@@ -301,7 +301,7 @@
 @media (max-width: 600px) {
     .first {
         flex-direction: column;
-        margin-left: 20px;
+        margin-left: -3px;
         margin-right: 20px;
     }
 
@@ -318,12 +318,13 @@
     .card {
         width: 100%;
         margin: 0 auto;
+
     }
 
     .abc,
     .first2 {
         font-size: 32px;
-        margin-left: 20px;
+        margin-left: -50px;
     }
 
     .txt_1,
@@ -346,5 +347,75 @@
         font-size: 40px;
         margin-left: 0;
 
+    }
+}
+
+@media (max-width: 768px) {
+    .main_about1 {
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    .main-txt {
+        margin-left: 50px;
+    }
+
+    .card {
+        width: 100%;
+        margin-top: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main_view {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    /* Scale down font sizes */
+    .txt1,
+    .txt2 {
+        font-size: 1.5em;
+
+    }
+
+    .views1,
+    .views2,
+    .views3,
+    .views4 {
+        font-size: 1.8em;
+        width: 150px;
+        /* Slightly smaller for medium screens */
+    }
+}
+
+/* Adjustments for mobile devices */
+@media (max-width: 480px) {
+    .main_about2 {
+        padding: 20px;
+    }
+
+    .txt1,
+    .txt2 {
+        font-size: 1.2em;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Stack view items vertically */
+    .main_view {
+        flex-direction: column;
+        gap: 1px;
+    }
+
+    .views1,
+    .views2,
+    .views3,
+    .views4 {
+        font-size: 1.5em;
+        width: 100%;
+        /* Full width on small screens */
+        max-width:300px;
     }
 }
