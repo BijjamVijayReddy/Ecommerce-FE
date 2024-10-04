@@ -19,7 +19,6 @@ function App() {
       setIsOnline(true); 
     };
 
-  
     window.addEventListener('offline', handleOffline);
     window.addEventListener('online', handleOnline);
 
@@ -29,23 +28,20 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    if (!initialized) {
-      const token = sessionService.getToken();
-      if (token) {
-        navigate("/dashboard");
-      } else {
-        navigate("/login");
-      }
-      setInitialized(true);
-    }
-  }, [navigate, initialized]);
+  // useEffect(() => {
+  //   if (!initialized) {
+  //     const token = sessionService.getToken();
+  //     if (token) {
+  //       navigate("/dashboard");
+  //     } else {
+  //       navigate("/login");
+  //     }
+  //     setInitialized(true);
+  //   }
+  // }, [navigate, initialized]);
 
   return (
-    <div>
-      {/* <AppRoutes /> */}
-      {/* <Internet /> */}
-      
+    <div>  
        {!isOnline ? <Internet /> : <AppRoutes />}
     </div>
   );

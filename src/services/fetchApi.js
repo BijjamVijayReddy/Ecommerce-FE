@@ -1,8 +1,8 @@
 import axios from "axios";
-import { showToast } from "../components/toast/Toast"; 
+import { showToast } from "../components/toast/Toast";
 
 const apiClient = axios.create({
-    baseURL: 'https://swiftcart-g6dwdmajg0f2g2bd.southindia-01.azurewebsites.net/swift-cart',
+    baseURL: ' https://swiftcart-backend-hcbccxbwhjb0b9fu.southindia-01.azurewebsites.net/swift-cart',
     headers: {
         'Content-Type': 'application/json',
     },
@@ -19,7 +19,7 @@ export const fetchApi = async (method, endPoint, data = null, config = {}) => {
         return response.data;
     } catch (error) {
         const statusCode = error?.response?.status || error?.status;
-        
+
         // Error handling based on status codes
         if (statusCode === 400) {
             showToast("Bad Request", "error");

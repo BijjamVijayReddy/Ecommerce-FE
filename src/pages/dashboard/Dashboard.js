@@ -5,6 +5,7 @@ import Slider from '../../components/slider/Slider'
 import AppInfo from '../../components/AppInfo/AppInfo'
 import NewsLetter from '../../components/NewsLetter/NewsLetter'
 import Helmet from '../../components/helmet/Helmet'
+import Product from '../../components/all_products/Product'
 
 const Dashboard = () => {
     return (
@@ -12,6 +13,7 @@ const Dashboard = () => {
             <AppHeader />
             <Slider />
             <AppInfo />
+            <Product />
             <NewsLetter />
             <AppFooter />
         </Helmet>
