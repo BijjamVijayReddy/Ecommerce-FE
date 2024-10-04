@@ -74,7 +74,6 @@ const Login = () => {
 
         try {
             const result = await fetchApi("POST", "/login", data);
-
             if (result && result.token) {
                 sessionService.setToken(result.token);
                 navigate("/dashboard");

@@ -10,8 +10,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../modal/Modal';
 import sessionService from '../../services/sessionServices';
+import { useSelector } from 'react-redux';
 
 const AppHeader = () => {
+  const cartLenght = useSelector((state) => state.totalQuantity);
+  console.log(JSON.stringify(cartLenght));
+  
   const [showLogoutModal, setShowLogoutModal] = useState(false);
   const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false);
@@ -75,7 +79,7 @@ const AppHeader = () => {
             <Link to="/cart">
               <FontAwesomeIcon icon={faShoppingCart} />
             </Link>
-            <span className="cart-count">0</span>
+            <span className="cart-count">{cartLenght}</span>
           </div>
           <div className="profile-icon" onClick={toggleProfileDropdown}>
             <FontAwesomeIcon icon={faUserCircle} size="2x" />
