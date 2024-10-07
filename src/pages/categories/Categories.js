@@ -3,6 +3,10 @@ import AppHeader from '../../components/appHeader/AppHeader';
 import AppFooter from '../../components/appFooter/AppFooter';
 import { formatCurrency } from '../../utlity/formater/formatCurrency';
 import { useDispatch } from 'react-redux';
+import { fetchApi } from '../../services/fetchApi';
+import sessionService from '../../services/sessionServices';
+import CustomToast, { showToast } from '../../components/toast/Toast';
+
 
 
 const data = [
@@ -294,7 +298,22 @@ const ProductFilter = () => {
     setSelectedCategory(event.target.value);
   };
 
- 
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const token = await sessionService.getToken(); // Retrieve the token
+        const config = { headers: { Authorization: `Bearer ${token}` } }; // Use Bearer token format
+        const result = await fetchApi('GET', "/getAllProducts", config); // Await the API response
+        console.log("result", JSON.stringify(result));
+      } catch (error) {
+        console.error("Error fetching data", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
 
 
   const filteredProducts = data.filter((product) => {
@@ -308,11 +327,13 @@ const ProductFilter = () => {
     dispatch({
       type: "ADD_TO_CART",
       payload: item
-    })
+    });
+    showToast("🎉 Item Added Successfully ✨")
   }
 
   return (
     <div className="">
+      <CustomToast />
       <AppHeader />
 
 
