@@ -34,6 +34,20 @@ const cartReducer = (state = initialState, action) => {
                 };
             }
 
+        case "DELETE_ITEM":
+            const itemToDelete = state.cartItems.find((item) => item.id === action.payload);
+            if (!itemToDelete) return state;
+
+            const updatedTotalAmount = state.totalAmount - (itemToDelete.price * itemToDelete.quantity);
+            const updatedCartItems = state.cartItems.filter((item) => item.id !== action.payload);
+
+            return {
+                ...state,
+                cartItems: updatedCartItems,
+                totalQuantity: state.totalQuantity - itemToDelete.quantity,
+                totalAmount: updatedTotalAmount
+            };
+
         default:
             return state;
     }

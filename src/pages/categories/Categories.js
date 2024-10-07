@@ -294,6 +294,8 @@ const ProductFilter = () => {
     setSelectedCategory(event.target.value);
   };
 
+ 
+
 
   const filteredProducts = data.filter((product) => {
     const matchCategory = selectedCategory ? product.category === selectedCategory : true;
