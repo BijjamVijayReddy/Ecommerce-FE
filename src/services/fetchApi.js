@@ -20,7 +20,6 @@ export const fetchApi = async (method, endPoint, data = null, config = {}) => {
     } catch (error) {
         const statusCode = error?.response?.status || error?.status;
 
-        // Error handling based on status codes
         if (statusCode === 400) {
             showToast("Bad Request", "error");
         } else if (statusCode === 401) {
