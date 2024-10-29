@@ -16,6 +16,7 @@ const Dashboard = () => {
             <Product />
             <NewsLetter />
             <AppFooter />
+            
         </Helmet>
     )
 }
