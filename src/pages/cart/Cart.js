@@ -51,7 +51,7 @@ const Cart = () => {
                                 SubTotal:
                                 <span className="text-red-600 text-xl">₹ {formatCurrency(totalAmount)}/-</span>
                             </h6>
-                            <p>Taxes and shipping will calculate at checkout</p>
+                            <p>Taxes and shipping will calculate at checkout..!</p>
                             <div className="mt-4">
                                 <Link to="">
                                     <button className="bg-blue-500 text-white py-2 px-4 rounded mr-4 hover:bg-blue-600">
