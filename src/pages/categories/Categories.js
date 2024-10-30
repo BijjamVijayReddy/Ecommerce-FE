@@ -6,7 +6,8 @@ import { useDispatch } from 'react-redux';
 import { fetchApi } from '../../services/fetchApi';
 import sessionService from '../../services/sessionServices';
 import CustomToast, { showToast } from '../../components/toast/Toast';
-import "./model.css"
+import './categories.css';
+
 
 
 
@@ -297,6 +298,13 @@ const ProductFilter = () => {
         setSearchTerm(event.target.value.toLowerCase());
     };
 
+    // Function to toggle the wishlist status
+    function toggleWishlist(event) {
+    const icon = event.currentTarget;
+    icon.classList.toggle('active');
+    }
+  
+
 
     const handleCategoryChange = (event) => {
         setSelectedCategory(event.target.value);
@@ -341,7 +349,7 @@ const ProductFilter = () => {
 
             <h2 className='hi'>Hi</h2>
 
-            <div className="search-bar-container"style={{display:'flex',justifyContent:'center',marginTop:'20px'}}>
+            <div className="search-bar-container">
                 <input
                     type="text"
                     placeholder="Search products..."
@@ -352,95 +360,93 @@ const ProductFilter = () => {
             </div>
 
 
-            <div className="">
-                <label className="">
+            <div className="category-radio-group">
+                <label className="category-radio-label">
                     <input
                         type="radio"
                         value=""
                         checked={selectedCategory === ''}
                         onChange={handleCategoryChange}
-                        className=""
+                        className="category-radio-input"
                     />
                     All Categories
                 </label>
-                <label className="">
+                <label className="category-radio-label">
                     <input
                         type="radio"
                         value="Speakers"
                         checked={selectedCategory === 'Speakers'}
                         onChange={handleCategoryChange}
-                        className=""
+                        className="category-radio-input"
                     />
                     Speakers
                 </label>
-                <label className="">
+                <label className="category-radio-label">
                     <input
                         type="radio"
                         value="Television"
                         checked={selectedCategory === 'Television'}
                         onChange={handleCategoryChange}
-                        className=""
+                        className="category-radio-input"
                     />
                     Television
                 </label>
-                <label className="">
+                <label className="category-radio-label">
                     <input
                         type="radio"
                         value="Washing Machine"
                         checked={selectedCategory === 'Washing Machine'}
                         onChange={handleCategoryChange}
-                        className=""
+                        className="category-radio-input"
                     />
                     Washing Machine
                 </label>
-                <label className="">
+                <label className="category-radio-label">
                     <input
                         type="radio"
                         value="Air Conditioner"
                         checked={selectedCategory === 'Air Conditioner'}
                         onChange={handleCategoryChange}
-                        className=""
+                        className="category-radio-input"
                     />
                     Air Conditioner
                 </label>
-                <label className="">
+                <label className="category-radio-label">
                     <input
                         type="radio"
                         value="Refrigerator"
                         checked={selectedCategory === 'Refrigerator'}
                         onChange={handleCategoryChange}
-                        className=""
+                        className="category-radio-input"
                     />
                     Refrigerator
                 </label>
-                <label className="">
+                <label className="category-radio-label">
                     <input
                         type="radio"
                         value="Mobiles"
                         checked={selectedCategory === 'Mobiles'}
                         onChange={handleCategoryChange}
-                        className=""
+                        className="category-radio-input"
                     />
                     Mobiles
                 </label>
             </div>
 
 
-            <div className=''>
+            <div className='product-list'>
                 {filteredProducts.map((item) => (
-                    <div key={item.id} className="">
-                        <img
-                            src={item.imageUrl}
-                            alt="product"
-                            className=""
-                        />
-                        <div className="">
-                            <h5 className="">{item.category}</h5>
+                    <div key={item.id} className="product-card">
+                        <div className='product-header'>
+                        <img src={item.imageUrl} alt="product" className="product-image"/>
+                        <div className='wishlist-icon' onClick={toggleWishlist}>&#9825;</div>
                         </div>
-                        <div className="">
-                            <h5 className="">₹ {formatCurrency(item.price)}/-</h5>
-                            <h5 className=""> {item.productName}</h5>
-                            <button className="" onClick={() => cartHandler(item)} >Add To Cart</button>
+                        <div className="product-footer">
+                            <h5 className="product-category">{item.category}</h5>
+                            <h5 className="product-price">₹ {formatCurrency(item.price)}/-</h5>
+                            <h5 className="product-name"> {item.productName}</h5>
+                            <h5 className='product-desc'>{item.description}</h5>
+                            <button className="add-to-cart-btn" onClick={() => cartHandler(item)} >Add To Cart</button>
                         </div>
                     </div>
                 ))}
