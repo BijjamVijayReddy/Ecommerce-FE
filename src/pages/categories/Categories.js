@@ -7,10 +7,7 @@ import { fetchApi } from '../../services/fetchApi';
 import sessionService from '../../services/sessionServices';
 import CustomToast, { showToast } from '../../components/toast/Toast';
 import './categories.css';
-
-
-
-
+import StarRating from '../../components/starReview/StarRating';
 
 const data = [
     {
@@ -21,6 +18,7 @@ const data = [
         "discount": 5,
         "category": "Electronic_Oven",
         "description": "Can be used for baking along with grilling, reheating, defrosting and cooking"
+        
     },
     {
         "id": 3,
@@ -29,7 +27,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/smartwatch/h/c/3/-original-imagte4syszvbmt2.jpeg?q=70&crop=false 1x",
         "discount": 10,
         "category": "Watch",
-        "description": "Apple Watch Series 9 GPS 45mm Aluminium Case with Sport Band - S/M  (Midnight Strap, Free Size)"
+        "description": "Apple Watch Series 9 GPS 45mm Aluminium Case with Sport Band - S/M"
     },
     {
         "id": 4,
@@ -74,7 +72,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/television/i/7/w/-original-imah3gsb9hhwthcz.jpeg?q=70&crop=false 1x",
         "discount": 25,
         "category": "Television",
-        "description": "189.3 cm (75 inch) Ultra HD (4K) Mini LED Smart Google TV 2024 Edition with Advanced AI Processor XR, Studio Calibrated, Dolby Vision Atmos  (K-75XR70)"
+        "description": "189.3 cm (75 inch) Ultra HD (4K) Mini LED Smart Google TV 2024 Edition with Advanced"
     },
     {
         "id": 9,
@@ -83,7 +81,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/television/s/0/e/-original-imah54henxrxcdhx.jpeg?q=70&crop=false 1x",
         "discount": 20,
         "category": "Television",
-        "description": " Q 165 cm (65 inch) QLED Ultra HD (4K) Smart Google TV  (65UHDGQRWSGQ) Resolution: Ultra HD (4K) 3840 X2160 Pixels"
+        "description": " Q 165 cm (65 inch) QLED Ultra HD (4K) Smart Google TV  (65UHDGQRWSGQ)"
     },
     {
         "id": 10,
@@ -101,7 +99,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/television/i/5/1/-original-imahygg2gkbfqknn.jpeg?q=70&crop=false 1x",
         "discount": 5,
         "category": "Television",
-        "description": " 108 cm (43 inch) QLED Ultra HD (4K) Smart Google TV with Dolby Vision & Dolby Atmos  (43UHDGQMWSTQ)"
+        "description": " 108 cm (43 inch) QLED Ultra HD (4K) Smart Google TV with Dolby Vision & Dolby Atmos"
     },
     {
         "id": 12,
@@ -110,7 +108,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/television/v/m/k/l55m8-a2in-mi-original-imah2pggzz6g8teu.jpeg?q=70&crop=false 1x",
         "discount": 5,
         "category": "Television",
-        "description": " 138 cm (55 inch) Ultra HD (4K) LED Smart Google TV with 4K Dolby Vision | HDR 10 | Dolby Audio |,DTS X | DTS Virtual: X | Vivid Picture Engine"
+        "description": " 138 cm (55 inch) Ultra HD (4K) LED Smart Google TV with 4K Dolby Vision | HDR"
     },
     {
         "id": 14,
@@ -119,7 +117,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/television/u/v/o/-original-imah2v2gamua43wz.jpeg?q=70&crop=false 1x",
         "discount": 10,
         "category": "Television",
-        "description": " 108 cm (43 inch) Ultra HD (4K) LED Smart Tizen TV with 4K Upscaling | 300+ Free Channels | Multiple Voice Assistance Remote | Purcolor | HDR 10+ | Auto Game Mode | Q-Symphony | Knox Security  (UA43DUE76AKLXL)"
+        "description": " 108 cm (43 inch) Ultra HD (4K) LED Smart Tizen TV with 4K Upscaling | 300+ Free Channels | Multiple Voice Assistance Remote"
     },
     {
         "id": 15,
@@ -128,7 +126,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/television/u/s/s/-original-imah5ykhqwfybqft.jpeg?q=70&crop=false 1x",
         "discount": 15,
         "category": "Television",
-        "description": " 139 cm (55 inch) Ultra HD (4K) LED Smart WebOS TV with Alpha5 AI Processor 4K Gen6, AI Picture Pro, 4K Upscaling, 60 Hz Refresh Rate, Game Optimizer, Magic Remote Capability, 5-Year Guaranteed with New OS Experience  (55UR7500PSC)"
+        "description": " 139 cm (55 inch) Ultra HD (4K) LED Smart WebOS TV with Alpha5 AI Processor 4K Gen6, AI Picture Pro, 4K Upscaling, 60 Hz Refresh Rate, Game Optimizer"
     },
     {
         "id": 16,
@@ -137,7 +135,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/washing-machine-new/j/a/y/-original-imah47qufjqaagu5.jpeg?q=70&crop=false 1x",
         "discount": 15,
         "category": "Washing Machine",
-        "description": " Fully Automatic Front Load Washing Machines have Great Wash Quality with very less running cost 1400 rpm : Higher the spin speed, lower the drying time 8 kg"
+        "description": " Fully Automatic Front Load Washing Machines have Great Wash Quality with very less running cost 1400 rpm"
     },
     {
         "id": 17,
@@ -146,7 +144,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/washing-machine-new/q/w/x/-original-imagx7qhyuxgsmfy.jpeg?q=70&crop=false 1x",
         "discount": 20,
         "category": "Washing Machine",
-        "description": "5 Star with AI Direct Drive, 6 Motion, Inverter Direct Drive, Steam and Wi-Fi Enabled Fully Automatic Front Load Washing Machine with In-built Heater Black  (FHP1209Z5M)"
+        "description": "5 Star with AI Direct Drive, 6 Motion, Inverter Direct Drive, Steam and Wi-Fi Enabled Fully Automatic Front Load Washing Machine"
     },
     {
         "id": 18,
@@ -164,7 +162,7 @@ const data = [
         "imageUrl": " https://rukminim2.flixcart.com/image/416/416/xif0q/air-conditioner-new/h/j/v/-original-imah4gsy6yfmrum9.jpeg?q=70&crop=false 1x",
         "discount": 20,
         "category": "Air Conditioner",
-        "description": "Energy efficient, best in class cooling with easy maintenance.No need to manually reset the settings post power-cut   Auto-adjusts the temperature to ensure comfort during your sleep"
+        "description": "Energy efficient, best in class cooling with easy maintenance.No need to manually reset the settings post power-cut"
     },
     {
         "id": 20,
@@ -173,7 +171,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/air-conditioner-new/s/2/y/-original-imagxghbga5x5gzw.jpeg?q=70&crop=false 1x",
         "discount": 25,
         "category": "Air Conditioner",
-        "description": " 1.5 Ton No need to manually reset the settings post power-cut Energy efficient, best in class cooling with easy maintenance."
+        "description": " 1.5 Ton No need to manually reset the settings post power-cut Energy efficient"
     },
     {
         "id": 21,
@@ -182,7 +180,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/kn7sdjk0/air-conditioner-new/k/o/4/raw518hedo-window-hitachi-fixed-speed-original-imagfy3cmnm7m4wg.jpeg?q=70&crop=false 1x",
         "discount": 15,
         "category": "Air Conditioner",
-        "description": "1.5 Ton Auto Restart: No need to manually reset the settings post power-cut Copper : Energy efficient, best in class cooling with easy maintenance."
+        "description": "1.5 Ton Auto Restart: No need to manually reset the settings post power-cut Copper"
     },
     {
         "id": 22,
@@ -191,7 +189,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/air-conditioner-new/o/x/o/-original-imagmncz8jfwdafb.jpeg?q=70&crop=false 1x",
         "discount": 36,
         "category": "Air Conditioner",
-        "description": "1 Ton Auto Restart: No need to manually reset the settings post power-cut Copper : Energy efficient, best in class cooling with easy maintenance.Sleep Mode: Auto-adjusts the temperature to ensure comfort during your sleep"
+        "description": "1 Ton Auto Restart: No need to manually reset the settings post power-cut Copper : Energy efficient, best in class cooling with easy maintenance"
     },
     {
         "id": 23,
@@ -200,7 +198,7 @@ const data = [
         "imageUrl": " https://rukminim2.flixcart.com/image/416/416/xif0q/refrigerator-new/t/m/9/-original-imah4c6pbhvgerzn.jpeg?q=70&crop=false 1x",
         "discount": 26,
         "category": "Refrigerator",
-        "description": "Base Drawer with Digital Inverter Direct Cool : Economical, consumes less electricity, requires manual defrosting Base Stand with Drawer : For storing items that don't need cooling (Onion, Potato etc.)"
+        "description": "Base Drawer with Digital Inverter Direct Cool : Economical, consumes less electricity, requires manual defrosting Base Stand with Drawer"
     },
     {
         "id": 24,
@@ -209,7 +207,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/refrigerator-new/m/x/0/-original-imah2d8dqfagz47p.jpeg?q=70&crop=false 1x",
         "discount": 26,
         "category": "Refrigerator",
-        "description": "Smart Inverter Compressor Direct Cool : Economical, consumes less electricity, requires manual defrosting For storing items that don't need cooling"
+        "description": "Smart Inverter Compressor Direct Cool : Economical, consumes less electricity"
     },
     {
         "id": 25,
@@ -245,7 +243,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/a/o/2/-original-imah3ajbyffs6hee.jpeg?q=70&crop=false 1x",
         "discount": 5,
         "category": "Mobiles",
-        "description": "8 GB RAM | 128 GB ROM | Expandable Upto 2 TB.16.94 cm (6.67 inch) Full HD+ Display.50MP + 2MP | 50MP Front Camera.5000 mAh Battery 5G Processor."
+        "description": "8 GB RAM | 128 GB ROM | Expandable Upto 2 TB.16.94 cm (6.67 inch) Full HD+ Display.50MP + 2MP"
     },
 
     {
@@ -255,7 +253,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/312/312/xif0q/mobile/e/e/g/-original-imah4sssfvvahchb.jpeg?q=70",
         "discount": 47,
         "category": "Mobiles",
-        "description": "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB.16.76 cm (6.6 inch) Full HD+ Display.50MP + 2MP + 2MP | 13MP Front Camera.5000 mAh Lithium Ion Battery."
+        "description": "6 GB RAM | 128 GB ROM | Expandable Upto 1 TB.16.76 cm (6.6 inch) Full HD+ Display.50MP + 2MP + 2MP"
     },
     {
         "id": 31,
@@ -264,7 +262,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/y/9/0/-original-imahyuhfg2z4fvyh.jpeg?q=70&crop=false 1x",
         "discount": 31,
         "category": "Mobiles",
-        "description": "8 GB RAM | 128 GB ROM | Expandable Upto 1 TB.16.94 cm (6.67 inch) Full HD+ Display.50MP + 2MP + 16MP | 13MP Front Camera.5000 mAh Lithium Ion Battery .Dimensity 7050 Processor."
+        "description": "8 GB RAM | 128 GB ROM | Expandable Upto 1 TB.16.94 cm (6.67 inch) Full HD+ Display.50MP + 2MP + 16MP "
     },
     {
         "id": 32,
@@ -273,7 +271,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/x/k/h/-original-imah5ywff9rr76zh.jpeg?q=70&crop=false 1x",
         "discount": 62,
         "category": "Mobiles",
-        "description": "8 GB RAM | 128 GB ROM.16.26 cm (6.4 inch) Full HD+ Display.50MP + 12MP | 10MP Front Camera.4500 mAh Battery.Samsung Exynos 2200 Processor."
+        "description": "8 GB RAM | 128 GB ROM.16.26 cm (6.4 inch) Full HD+ Display.50MP + 12MP | 10MP Front Camera.4500 mAh Battery"
     },
 
     {
@@ -283,7 +281,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/e/y/x/-original-imagtwh5zrcy9hfj.jpeg?q=70&crop=false 1x",
         "discount": 48,
         "category": "Mobiles",
-        "description": "8 GB RAM | 128 GB ROM.16.26 cm (6.4 inch) Full HD+ Display.50MP + 12MP | 10MP Front Camera.4575 mAh Battery.Samsung Tensor G3 Processor."
+        "description": "8 GB RAM | 128 GB ROM.16.26 cm (6.4 inch) Full HD+ Display.50MP + 12MP | 10MP Front Camera.4575 mAh Battery."
     }
 
 ];
@@ -292,8 +290,7 @@ const ProductFilter = () => {
     const dispatch = useDispatch()
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
-
-
+    
     const handleSearch = (event) => {
         setSearchTerm(event.target.value.toLowerCase());
     };
@@ -303,8 +300,6 @@ const ProductFilter = () => {
     const icon = event.currentTarget;
     icon.classList.toggle('active');
     }
-  
-
 
     const handleCategoryChange = (event) => {
         setSelectedCategory(event.target.value);
@@ -346,8 +341,6 @@ const ProductFilter = () => {
         <div className="">
             <CustomToast />
             <AppHeader />
-
-            <h2 className='hi'>Hi</h2>
 
             <div className="search-bar-container">
                 <input
@@ -445,7 +438,8 @@ const ProductFilter = () => {
                             <h5 className="product-category">{item.category}</h5>
                             <h5 className="product-price">₹ {formatCurrency(item.price)}/-</h5>
                             <h5 className="product-name"> {item.productName}</h5>
-                            <h5 className='product-desc'>{item.description}</h5>
+                            <StarRating />
+                            <h5 className="product-desc"> {item.description}</h5>
                             <button className="add-to-cart-btn" onClick={() => cartHandler(item)} >Add To Cart</button>
                         </div>
                     </div>
