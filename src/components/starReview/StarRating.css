@@ -1,0 +1,13 @@
+/* In StarRating.css or your main CSS file */
+.star-rating {
+  display: flex;
+}
+
+.star {
+  color: #fff; 
+  font-size: 20px;
+}
+
+.star.filled {
+  color: #ffd700; 
+}

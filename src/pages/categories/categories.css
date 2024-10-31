@@ -3,12 +3,12 @@
 .search-bar-container {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 120px;
 }
 
 .search-input {
     width: 100%;
-    max-width: 400px;
+    max-width: 600px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid;
@@ -23,6 +23,7 @@
     justify-content: center;
     gap: 1rem; 
     margin-bottom: 1.5rem; 
+    margin-top: 30px;
   }
 
 .category-radio-label {
@@ -34,6 +35,7 @@
     font-weight: 500;
     transition: color 0.3s ease;
   }
+  
 
 .category-radio-input {
     margin-right: 0.5rem;
@@ -82,9 +84,11 @@
   object-fit: contain;
 }
 .product-footer {
-  padding: 1rem;
-  text-align: center;
+ padding-top: 0.3rem;
+ padding-bottom: 0.2rem;
+ text-align: center;
 }
+
 .product-category{
   position: absolute;
   top: 8px;
@@ -99,20 +103,20 @@
 
 .product-price{
     font-size: 1.1rem;
-    font-weight: bold; /* Make the price bold */
+    font-weight: bold; 
     color: #333;
     margin-bottom: 0.5rem;
   }
-
-.product-desc {
-  font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 1rem;
-}
+  
 .product-name{
   font-size: 1rem;
   font-weight: 500;
   color: #444;
+  margin-bottom: 1rem;
+}
+.product-desc {
+  font-size: 0.9rem;
+  color: #666;
   margin-bottom: 1rem;
 }
 
@@ -146,4 +150,84 @@
 }
 .wishlist-icon.active {
   color: #750112;
+}
+.star-rating {
+  color: gold;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Media Queries */
+
+/* System version*/
+@media (max-width: 1024px) {
+  .search-bar-container {
+      margin-top: 80px;
+  }
+
+  .search-input {
+      max-width: 500px;
+      font-size: 15px;
+  }
+
+  .product-list {
+      grid-template-columns: repeat(3, 1fr); 
+  }
+
+  .product-card {
+      margin: 0 auto; 
+  }
+}
+/* Tablet version*/
+@media (max-width: 769px) {
+  .search-bar-container {
+      margin-top: 60px;
+  }
+
+  .search-input {
+      max-width: 400px;
+      font-size: 14px;
+  }
+
+  .product-list {
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-radio-group {
+      flex-direction: column; 
+      align-items: center;
+  }
+
+  .category-radio-label {
+      font-size: 0.9rem;
+  }
+}
+
+/* Mobile version*/
+@media (max-width: 469px) {
+  .search-bar-container {
+      margin-top: 40px;
+  }
+
+  .search-input {
+      max-width: 100%; 
+      font-size: 13px;
+      padding: 8px;
+  }
+
+  .product-list {
+      grid-template-columns: 1fr; 
+  }
+
+  .product-card {
+      width: 90%; 
+      margin: 0 auto; 
+  }
+
+  .add-to-cart-btn {
+      width: 100%; 
+  }
 }
