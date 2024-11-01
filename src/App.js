@@ -40,10 +40,12 @@ function App() {
     }
   }, [navigate, initialized]); */
 
+
+
   return (
-    <div>  
+     <div>  
        {!isOnline ? <Internet /> : <AppRoutes />}
-    </div>
+     </div>
   );
 }
 
