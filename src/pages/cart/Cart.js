@@ -15,7 +15,7 @@ const delete_Svg = <svg xmlns="http://www.w3.org/2000/svg" style={{ color: "brow
 </svg>
 
 const Cart = () => {
-    const navigate= useNavigate();
+    const navigate = useNavigate();
     const cartItems = useSelector((state) => state.cartItems);
     const totalAmount = useSelector((state) => state.totalAmount);
 
@@ -23,7 +23,7 @@ const Cart = () => {
         <Helmet title="Cart">
             <CustomToast />
             <AppHeader />
-            <div className="py-8 mt-[100px]">
+            {/* <div className="py-8 mt-[100px]">
                 <div className="grid grid-cols-1">
                     <div className="col-span-1 w-[90%] mx-auto">
                         {cartItems.length === 0 ? (
@@ -65,13 +65,18 @@ const Cart = () => {
                                        
 
                                     </button>
-
                                 </Link>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div> */}
+
+            <div className="hi">
+
+                <p>Lorem, ipsum.</p>
             </div>
+
             <AppFooter />
         </Helmet>
     );
@@ -87,7 +92,7 @@ const Tr = (props) => {
             type: "DELETE_ITEM",
             payload: id
         });
-        showToast("🗑️ Item Removed from Cart","success")
+        showToast("🗑 Item Removed from Cart", "success")
     };
 
 
