@@ -17,7 +17,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/microwave-new/9/5/n/-original-imagk8skba6ebhnz.jpeg?q=70&crop=false 1x",
         "discount": 5,
         "category": "Electronic_Oven",
-        "description": "Can be used for baking along with grilling, reheating, defrosting and cooking"
+        "description": "Can be used for baking along with grilling, reheating"
         
     },
     {
