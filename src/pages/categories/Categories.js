@@ -345,7 +345,7 @@ const ProductFilter = () => {
             <div className="search-bar-container">
                 <input
                     type="text"
-                    placeholder="Search products..."
+                    placeholder="Search products......!."
                     value={searchTerm}
                     onChange={handleSearch}
                     className="search-input"
