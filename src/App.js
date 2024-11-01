@@ -38,12 +38,12 @@ function App() {
   //     }
   //     setInitialized(true);
   //   }
-  // }, [navigate, initialized]);
+  // }, [navigate, initialized]); 
 
   return (
-    <div>  
+     <div>  
        {!isOnline ? <Internet /> : <AppRoutes />}
-    </div>
+     </div>
   );
 }
 
