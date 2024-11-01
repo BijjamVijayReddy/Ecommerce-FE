@@ -4,10 +4,15 @@
 }
 
 .star {
-  color: #fff; 
+  color: #ddd; 
   font-size: 20px;
 }
 
 .star.filled {
   color: #ffd700; 
+}
+
+.star.half-filled {
+  color: #ffd700; /* Gold for half star */
+  position: relative;
 }
