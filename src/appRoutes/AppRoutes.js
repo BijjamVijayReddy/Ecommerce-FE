@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from "../pages/login/Login"
 import ForgotPassword from '../pages/forgot_Password/Forgot_password';
-import SignUp from '../pages/signUp/SignUp';
+import SignUp from '../pages/SignUp/SignUp';
 import Dashbaord from "../pages/dashboard/Dashboard";
 import Categories from "../pages/categories/Categories";
 //import Categories from "../pages/Categories"
