@@ -1,5 +1,6 @@
 import React from 'react';
 import { formatCurrency } from '../../utlity/formater/formatCurrency';
+import './Product.css'
 
 const data = [
     {
@@ -281,33 +282,46 @@ const rightArrow = (<svg xmlns="http://www.w3.org/2000/svg" fill="none" style={{
 
 const Product = () => {
 
-    const mobiles = data.filter((item) => item.category === "Mobiles");
-    console.log(JSON.stringify(mobiles))
+    const uniqueCategories = data.reduce((acc, item) => {
+        // Check if the category already exists in the accumulator
+        if (!acc.some((i) => i.category === item.category)) {
+          acc.push(item); // Add the item if the category is not yet included
+        }
+        return acc;
+      }, []);
+      
+    console.log(JSON.stringify(uniqueCategories))
 
     return (
         <div>
             <div className='flex justify-end relative right-[60px]'>
                 <button >{rightArrow}</button>
             </div>
-            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mt-6 max-w-[90%] mx-auto p-1 border-[#e0e0e0]'>
-                {mobiles.map((item) => (
-                    <div key={item.id} className="relative overflow-hidden border p-5 align-center rounded-xl bg-opacity-50 ">
-                        <img
-                            src={item.imageUrl}
-                            alt="product"
-                            className="h-[200px] w-[auto] object-cover rounded-lg transition-all duration-300 ease-in-out hover:h-[350px]"
-                        />
-                        <div className="absolute top-[-150px] left-[-10px] inset-1 flex items-center justify-start p-5">
-                            <h5 className=" font-medium text-white bg-black bg-opacity-50 px-2 py-1 rounded-lg ">{item.category}</h5>
-                        </div>
-                        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 rounded-lg hover:opacity-100 transition-opacity duration-300">
-                            <h5 className="text-white text-lg">₹ {formatCurrency(item.price)}/-</h5>
-                            <h5 className="text-white text-sm"> {item.productName}</h5>
-                            <button className="mt-2 px-4 py-2 bg-[brown] text-white rounded" >More</button>
-                        </div>
-                    </div>
-                ))}
+            <div>
+                <img src="https://img.freepik.com/free-vector/horizontal-banner-template-black-friday-sales_23-2150867247.jpg?t=st=1730310734~exp=1730314334~hmac=82b84d1159d6ad24d1f5a270723bce1a25d4278c252b02255435ea979a205f07&w=1380" alt="" className='banner'/>
             </div>
+              <div className="product-grid-container">
+              {uniqueCategories.map((item) => (
+                <div key={item.id} className="product-card">
+                <img
+                  src={item.imageUrl}
+                  alt="product"
+                  className="product-image"
+                />
+                <div className="product-category">
+                  <h5>{item.category}</h5>
+                </div>
+                <div className="product-details">
+                  <h5 className="product-price">₹ {formatCurrency(item.price)}/-</h5>
+                  <h5 className="product-name">{item.productName}</h5>
+                  <button className="product-button">More</button>
+                </div>
+              </div>
+    
+                 ))}
+            </div>
+            <img src="https://as1.ftcdn.net/v2/jpg/04/75/43/76/1000_F_475437615_9wyPgTteuaIXREeq3RFqu9Qae1sHB3lI.jpg" alt=""  className='banner'/>
+
         </div>
     )
 }
