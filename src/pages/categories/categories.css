@@ -3,7 +3,7 @@
 .search-bar-container {
     display: flex;
     justify-content: center;
-    margin-top: 120px;
+    margin-top: 130px;
 }
 
 .search-input {
@@ -52,14 +52,14 @@
 }
 
 /*Product Section*/
-.product-list {
+.cate-list {
   display: grid;
   grid-template-columns: repeat(4,1fr);
   gap: 1rem;
   padding: 1rem;
 }
 
-.product-card {
+.cate-card {
   display: flex;
   flex-direction: column;
   border: 1px solid #ddd;
@@ -70,7 +70,7 @@
   transition: transform 0.2s ease;
   width: 100%;
 }
-.product-header {
+.cate-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -83,13 +83,13 @@
   height: 85%;
   object-fit: contain;
 }
-.product-footer {
+.cate-footer {
  padding-top: 0.3rem;
  padding-bottom: 0.2rem;
  text-align: center;
 }
 
-.product-category{
+.cate-category{
   position: absolute;
   top: 8px;
   left: 8px;
@@ -101,20 +101,20 @@
   font-weight: bold;
 }
 
-.product-price{
+.cate-price{
     font-size: 1.1rem;
     font-weight: bold; 
     color: #333;
     margin-bottom: 0.5rem;
   }
   
-.product-name{
+.cate-name{
   font-size: 1rem;
   font-weight: 500;
   color: #444;
   margin-bottom: 1rem;
 }
-.product-desc {
+.cate-desc {
   font-size: 0.9rem;
   color: #666;
   margin-bottom: 1rem;
@@ -133,7 +133,7 @@
 .add-to-cart-btn:hover {
   background-color: #0056b3;
 }
-.product-card:hover {
+.cate-card:hover {
   transform: translateY(10px);
 }
 
@@ -165,7 +165,7 @@
 /* System version*/
 @media (max-width: 1024px) {
   .search-bar-container {
-      margin-top: 80px;
+      margin-top: 135px;
   }
 
   .search-input {
@@ -173,18 +173,19 @@
       font-size: 15px;
   }
 
-  .product-list {
+  .cate-list {
       grid-template-columns: repeat(3, 1fr); 
   }
 
-  .product-card {
+  .cate-card {
       margin: 0 auto; 
   }
 }
 /* Tablet version*/
 @media (max-width: 769px) {
   .search-bar-container {
-      margin-top: 60px;
+      margin-top: 100px;
+      position: static;
   }
 
   .search-input {
@@ -192,7 +193,7 @@
       font-size: 14px;
   }
 
-  .product-list {
+  .cate-list {
       grid-template-columns: repeat(2, 1fr);
   }
 
@@ -209,20 +210,21 @@
 /* Mobile version*/
 @media (max-width: 469px) {
   .search-bar-container {
-      margin-top: 40px;
+      margin-top: 100px;
+      position: static;
   }
 
   .search-input {
-      max-width: 100%; 
+      max-width: 200%; 
       font-size: 13px;
       padding: 8px;
   }
 
-  .product-list {
+  .cate-list {
       grid-template-columns: 1fr; 
   }
 
-  .product-card {
+  .cate-card {
       width: 90%; 
       margin: 0 auto; 
   }
@@ -231,3 +233,4 @@
       width: 100%; 
   }
 }
+

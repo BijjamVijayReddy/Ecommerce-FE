@@ -28,7 +28,7 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (!initialized) {
       const token = sessionService.getToken();
       if (token) {
@@ -39,7 +39,7 @@ function App() {
       setInitialized(true);
     }
   }, [navigate, initialized]);
-
+ */
 
  return (
      <div>  
