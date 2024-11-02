@@ -5,6 +5,7 @@ import sessionService from "./services/sessionServices";
 import Internet from "../src/utlity/InternetTracker/Internet";
 
 
+
 function App() {
   const navigate = useNavigate();
   const [initialized, setInitialized] = useState(false);
@@ -27,19 +28,18 @@ function App() {
     };
   }, []);
 
-
-  // useEffect(() => {
-  //   if (!initialized) {
-  //     const token = sessionService.getToken();
-  //     if (token) {
-  //       navigate("/dashboard");
-  //     } else {
-  //       navigate("/login");
-  //     }
-  //     setInitialized(true);
-  //   }
-  // }, [navigate, initialized]);
-
+  /* useEffect(() => {
+    if (!initialized) {
+      const token = sessionService.getToken();
+      if (token) {
+        navigate("/dashboard");
+      } else {
+        navigate("/login");
+      }
+      setInitialized(true);
+    }
+  }, [navigate, initialized]);
+ */
 
  return (
      <div>  

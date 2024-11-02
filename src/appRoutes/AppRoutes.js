@@ -2,13 +2,15 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Login from "../pages/login/Login"
 import ForgotPassword from '../pages/forgot_Password/Forgot_password';
-import SignUp from '../pages/signUp/signUp';
+import SignUp from '../pages/SignUp/SignUp';
 import Dashbaord from "../pages/dashboard/Dashboard";
 import Categories from "../pages/categories/Categories";
+//import Categories from "../pages/Categories"
 import About from '../pages/about-us/About';
 import Contact from '../pages/contact/Contact';
 import Cart from '../pages/cart/Cart';
 import Profile from '../components/profile/Profile';
+
 
 const AppRoutes = () => {
     return (
