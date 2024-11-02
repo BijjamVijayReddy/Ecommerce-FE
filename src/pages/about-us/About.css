@@ -55,11 +55,12 @@
     margin-left: 220px;
     color: brown;
 }
-.down-txt{
+
+.down-txt {
     font-size: 40px;
     margin-top: -20px;
     margin-left: 220px;
-    color: brown; 
+    color: brown;
 }
 
 
@@ -289,6 +290,156 @@
     margin-top: -8px;
 }
 
+/* resp */
 
+@media (max-width: 992px) {
 
+    .main_about01,
+    .main_about02 {
+        max-width: 100%;
+        padding: 10px;
+    }
 
+    .card {
+        width: 250px;
+    }
+
+    .main-txt,
+    .abc,
+    .down-txt,
+    .first2,
+    .help-center,
+    .main_about2 .txt1,
+    .main_about2 .txt2 {
+        margin-left: 20px;
+    }
+
+    .main_about1 {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .first,
+    .main_view {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-txt {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+
+    .abc,
+    .down-txt,
+    .first2 {
+        font-size: 35px;
+    }
+
+    .help-center {
+        font-size: 22px;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main_about2 .txt1,
+    .main_about2 .txt2 {
+        font-size: 25px;
+        margin-left: 20px;
+    }
+
+    .main_about2 p.txt1,
+    .main_about2 p.txt2 {
+        font-size: 14px;
+        margin-left: 20px;
+    }
+
+    .main_view {
+        margin: 0 20px;
+        flex-direction: column;
+    }
+
+    .views1,
+    .views2,
+    .views3,
+    .views4 {
+        font-size: 40px;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .main-txt {
+        font-size: 16px;
+        margin-left: 60px;
+    }
+
+    .abc,
+    .down-txt,
+    .first2,
+    .help-center {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .abc,
+    .down-txt {
+        font-size: 28px;
+    }
+
+    .card {
+        width: 150%;
+        margin-left: -50px;
+    }
+
+    .card .logo_two {
+        width: 50%;
+        margin-left: 60px;
+    }
+
+    
+
+    .main_about2 .txt1 {
+        font-size: 20px;
+
+    }
+
+    .main_about2 .txt2 {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+
+    .main_about2 p.txt1 {
+        font-size: 20px;
+    }
+
+    .main_about2 p.txt2 {
+        font-size: 20px;
+    }
+
+    .main_view .views1 {
+        font-size: 45px;
+        margin-right: 80px;
+    }
+
+    .main_view .views2 {
+        font-size: 45px;
+        margin-left: 90px;
+    }
+
+    .main_view .views3 {
+        font-size: 45px;
+        margin-left: 90px;
+    }
+
+    .main_view .views4 {
+        font-size: 35px;
+        margin-left: 90px;
+    }
+}
