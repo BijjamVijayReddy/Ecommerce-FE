@@ -1,0 +1,112 @@
+/* Container for product grid */
+.product-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+  max-width: 90%;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  .product-grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .product-grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Styling for individual product cards */
+.product-card {
+  width: 100%;
+  max-width: 400px;
+  height: auto; /* Allow height to adjust based on content */
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  text-align: center;
+  border-radius: 16px;
+  background-color: rgba(220, 214, 214, 0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Space out the children evenly */
+  position: relative; /* For absolute positioning of content */
+}
+
+/* Styling for product image with hover effect */
+.product-image {
+  max-height: 150px; /* Limit image height */
+  width: 100%; /* Make image responsive */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 12px;
+  transition: transform 0.5s ease-in-out; /* Smooth transition for scaling */
+ /* margin-left:25px; */
+ margin: 0px 25px;
+}
+
+/* Zoom effect on hover */
+.product-card:hover .product-image {
+  transform: scale(1.1); /* Slightly zoom in on hover */
+}
+
+/* Styling for product category label */
+.product-category {
+  margin-top: 8px;
+  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Product details below the image */
+.product-details {
+  margin-top: 2px;
+  color: #555;
+  width: 100%; /* Ensure details take full width */
+  flex: 1; /* Allow this section to grow */
+  display: flex;
+  flex-direction: column; /* Stack price and name vertically */
+  align-items: center; /* Center-align items */
+}
+
+/* Price and name styling */
+.product-price {
+  font-size: 1rem;
+  color: #000;
+  font-weight: bold;
+  margin: 4px 0; /* Add margin for spacing */
+}
+
+.product-name {
+  font-size: 1rem;
+  color: #444;
+  margin-top: 4px;
+}
+
+/* Button styling */
+.product-button {
+  margin-top: 8px;
+  padding: 8px 16px;
+  background-color: brown;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.banner{
+  width: 100%;
+  height: 400px;
+  margin-bottom: 15px;
+ 
+}
+
+.product-button:hover {
+  background-color: darkred;
+}

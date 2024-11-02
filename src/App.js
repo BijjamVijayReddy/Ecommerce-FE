@@ -27,6 +27,7 @@ function App() {
     };
   }, []);
 
+
   // useEffect(() => {
   //   if (!initialized) {
   //     const token = sessionService.getToken();
@@ -39,10 +40,11 @@ function App() {
   //   }
   // }, [navigate, initialized]);
 
-  return (
-    <div>  
+
+ return (
+     <div>  
        {!isOnline ? <Internet /> : <AppRoutes />}
-    </div>
+     </div>
   );
 }
 

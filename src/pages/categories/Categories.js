@@ -17,7 +17,7 @@ const data = [
         "imageUrl": "https://rukminim2.flixcart.com/image/416/416/xif0q/microwave-new/9/5/n/-original-imagk8skba6ebhnz.jpeg?q=70&crop=false 1x",
         "discount": 5,
         "category": "Electronic_Oven",
-        "description": "Can be used for baking along with grilling, reheating, defrosting and cooking"
+        "description": "Can be used for baking along with grilling, reheating"
         
     },
     {
@@ -345,7 +345,7 @@ const ProductFilter = () => {
             <div className="search-bar-container">
                 <input
                     type="text"
-                    placeholder="Search products..."
+                    placeholder="Search products......!."
                     value={searchTerm}
                     onChange={handleSearch}
                     className="search-input"
@@ -427,19 +427,19 @@ const ProductFilter = () => {
             </div>
 
 
-            <div className='product-list'>
+            <div className='cate-list'>
                 {filteredProducts.map((item) => (
-                    <div key={item.id} className="product-card">
-                        <div className='product-header'>
+                    <div key={item.id} className="cate-card">
+                        <div className='cate-header'>
                         <img src={item.imageUrl} alt="product" className="product-image"/>
                         <div className='wishlist-icon' onClick={toggleWishlist}>&#9825;</div>
                         </div>
-                        <div className="product-footer">
-                            <h5 className="product-category">{item.category}</h5>
-                            <h5 className="product-price">₹ {formatCurrency(item.price)}/-</h5>
-                            <h5 className="product-name"> {item.productName}</h5>
+                        <div className="cate-footer">
+                            <h5 className="cate-category">{item.category}</h5>
+                            <h5 className="cate-price">₹ {formatCurrency(item.price)}/-</h5>
+                            <h5 className="cate-name"> {item.productName}</h5>
                             <StarRating />
-                            <h5 className="product-desc"> {item.description}</h5>
+                            <h5 className="cate-desc"> {item.description}</h5>
                             <button className="add-to-cart-btn" onClick={() => cartHandler(item)} >Add To Cart</button>
                         </div>
                     </div>

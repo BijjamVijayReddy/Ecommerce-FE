@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js app to Azure Web App - swiftcart-FrontEnd
+name: Build and deploy Node.js app to Azure Web App - FrontEnd--SwiftCart
 
 on:
   push:
@@ -40,7 +37,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write # This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -52,15 +49,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EE4E6D37BC6F4894B35BCFFCE6FE6D65 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_28F0B8F81A344A759EDD7B9A43714E9B }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_9999A9F4A1B543FF839FABE52016F46A }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A3BE2AD3DBDE43E8814553D417C878E8 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0785E985B3AD4E678A3B51F2B9969476 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0D07E4FB332E47BF9B02CD477AFA0BFE }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'swiftcart-FrontEnd'
+          app-name: 'FrontEnd--SwiftCart'
           slot-name: 'Production'
-          package: './artifact'
-          
+          package: './artifact'  # This should point to the correct artifact location.
