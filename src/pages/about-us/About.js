@@ -14,8 +14,8 @@ const About = () => {
       <div className='first'>
         <div className='main_about01'>
           <h4 className='abc'>The Future of</h4>
+          <h4 className='down-txt'>Grocery Delivery :</h4>
           <div className='first2'>
-            <h4 className='abc1'>Grocery Delivery :</h4>
             <p className='txt_1'>By powering the future grocery with</p>
             <p className='txt_2'>our retail partners, we give everyone</p>
             <p className='txt_3'>access to the food they love and more</p>
@@ -57,7 +57,6 @@ const About = () => {
           <p className='txt_size'>Vivamus non risus id sapien egestas tempus id sed lla mus justo metus, suscipit non hendrerit.</p>
           <a href="#" class="card-button">Learn More</a>
         </div>
-
 
       </div>
 
