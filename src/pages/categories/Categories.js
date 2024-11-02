@@ -12,6 +12,7 @@ import './categories.css';
 
 
 
+
 const data = [
     {
         "id": 1,

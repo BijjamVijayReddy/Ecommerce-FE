@@ -28,17 +28,17 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    if (!initialized) {
-      const token = sessionService.getToken();
-      if (token) {
-        navigate("/dashboard");
-      } else {
-        navigate("/login");
-      }
-      setInitialized(true);
-    }
-  }, [navigate, initialized]);
+  // useEffect(() => {
+  //   if (!initialized) {
+  //     const token = sessionService.getToken();
+  //     if (token) {
+  //       navigate("/dashboard");
+  //     } else {
+  //       navigate("/login");
+  //     }
+  //     setInitialized(true);
+  //   }
+  // }, [navigate, initialized]);
 
   return (
     <div>  

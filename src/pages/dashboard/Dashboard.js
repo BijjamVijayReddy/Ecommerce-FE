@@ -7,6 +7,7 @@ import NewsLetter from '../../components/NewsLetter/NewsLetter'
 import Helmet from '../../components/helmet/Helmet'
 import Product from '../../components/all_products/Product'
 
+
 const Dashboard = () => {
     return (
         <Helmet title="Dashboard">
@@ -16,7 +17,7 @@ const Dashboard = () => {
             <Product />
             <NewsLetter />
             <AppFooter />
-            
+          
         </Helmet>
     )
 }
