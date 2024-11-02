@@ -87,7 +87,7 @@ const AppHeader = () => {
           {showProfileDropdown && (
             <div className="profile-dropdown">
               <ul>
-                <li onClick={() => navigate('/MyProfile')}>MyProfile</li>
+                <li onClick={() => navigate('/Profile')}>MyProfile</li>
                 <li onClick={() => navigate('/Payment History')}>Payment History</li>
                 <li onClick={() => navigate('/settings')}>Settings</li>
                 <li className="browne" onClick={handleLogoutClick} style={{ color: 'white' }}>Logout</li>

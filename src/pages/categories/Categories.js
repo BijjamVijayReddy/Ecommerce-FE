@@ -9,6 +9,7 @@ import CustomToast, { showToast } from '../../components/toast/Toast';
 import './categories.css';
 import StarRating from '../../components/starReview/StarRating';
 
+
 const data = [
     {
         "id": 1,
