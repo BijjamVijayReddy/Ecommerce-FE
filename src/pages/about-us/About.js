@@ -24,7 +24,7 @@ const About = () => {
         </div>
 
         <div className='main_about02'>
-          <img className='photo' src={about} alt="Grocery Delivery" />
+        <img className='photo' src={about} alt="Grocery Delivery" />
         </div>
       </div>
 
@@ -61,7 +61,7 @@ const About = () => {
       </div>
 
       <div className='help-center'>
-        <small>For assistance using Swift Cart services,pleasevisit our<span className='txt'> Help Center</span></small>
+        <small>For assistance using Swift Cart services , please visit our<span className='txt'> Help Center</span></small>
       </div>
 
 

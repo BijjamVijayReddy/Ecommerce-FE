@@ -7,7 +7,7 @@ import Dashbaord from "../pages/dashboard/Dashboard";
 import Categories from "../pages/categories/Categories";
 import About from '../pages/about-us/About';
 import Contact from '../pages/contact/Contact';
-import Cart from '../pages/cart/Cart';
+// import Cart from '../pages/cart/Cart';
 import Profile from '../components/profile/Profile';
 
 const AppRoutes = () => {
@@ -20,7 +20,7 @@ const AppRoutes = () => {
             <Route path="/categories" element={<Categories />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path='/cart' element={<Cart />} />
+            {/* <Route path='/cart' element={<Cart />} /> */}
             <Route path='*' element={<Navigate to="/" />} />
             <Route path='/profile' element ={<Profile/>} />
         </Routes>
