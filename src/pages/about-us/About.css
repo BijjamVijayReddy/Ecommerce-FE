@@ -297,7 +297,7 @@
     .main_about01,
     .main_about02 {
         max-width: 100%;
-        padding: 10px;
+        padding: 100px;
     }
 
     .card {
@@ -330,6 +330,7 @@
     .main-txt {
         font-size: 18px;
         margin-top: 40px;
+        
     }
 
     .abc,
@@ -345,6 +346,7 @@
     .card {
         width: 100%;
         margin-bottom: 20px;
+        
     }
 
     .main_about2 .txt1,
@@ -382,9 +384,13 @@
 
     .abc,
     .down-txt,
-    .first2,
-    .help-center {
+    .first2 {
         font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .help-center {
+        font-size: 19px;
         margin-left: 10px;
     }
 
@@ -403,7 +409,31 @@
         margin-left: 60px;
     }
 
-    
+
+    .main_about01 .txt_1 {
+        font-size: 19px;
+
+    }
+
+    .main_about01 .txt_2 {
+        font-size: 19px;
+
+    }
+
+    .main_about01 .txt_3 {
+        font-size: 19px;
+
+    }
+
+    .main_about01 .txt_4 {
+        font-size: 19px;
+
+    }
+
+    .main_about02 .photo {
+        margin-left: 46px;
+    }
+
 
     .main_about2 .txt1 {
         font-size: 20px;
@@ -416,11 +446,13 @@
     }
 
     .main_about2 p.txt1 {
-        font-size: 20px;
+        font-size: 19px;
+        margin-top: 50px;
     }
 
     .main_about2 p.txt2 {
-        font-size: 20px;
+        font-size: 19px;
+        margin-top: 5px;
     }
 
     .main_view .views1 {
