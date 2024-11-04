@@ -27,7 +27,7 @@ jobs:
       - name: List build output
         run: |
           echo "Contents of the build directory:"
-          ls -la ./build
+          Get-ChildItem ./build  # Corrected command for Windows
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
