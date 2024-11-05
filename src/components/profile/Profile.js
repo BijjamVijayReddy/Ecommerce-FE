@@ -31,7 +31,7 @@ const Profile = () => {
   return (
   
    
-    <div className="profile-container">
+    <div className="profile-container"> 
       {/* <AppHeader /> */}
     <div className="avatar-section">
         <img src={user.avatar} alt="Avatar" className="avatar" />
