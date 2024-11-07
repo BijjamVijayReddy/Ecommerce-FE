@@ -291,46 +291,148 @@
 }
 
 /* resp */
-
 @media (max-width: 992px) {
 
-    .main_about01,
-    .main_about02 {
+    /* General adjustments for tablet */
+    .first {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main_about01 {
+        flex: 1 1;
         max-width: 100%;
-        padding: 100px;
+        padding-right: 17px;
+        margin-left: -290px;
     }
 
-    .card {
-        width: 250px;
-    }
-
-    .main-txt,
-    .abc,
-    .down-txt,
-    .first2,
-    .help-center,
-    .main_about2 .txt1,
-    .main_about2 .txt2 {
-        margin-left: 20px;
+    .main_about02 {
+        margin-left: 96px;
+        flex: 1 1;
+        max-width: 72%;
+        margin-top: 42px;
     }
 
     .main_about1 {
         flex-direction: column;
-        padding: 20px;
+        align-items: center;
+        gap: 15px;
     }
 
-    .first,
+    .card .logo_two {
+        margin-left: 232px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .main-txt p {
+        margin-left: -92px;
+    }
+
+    small {
+        font-size: 80%;
+        margin-left: -103px;
+    }
+
+    .main_about2 .txt1 {
+        margin-top: 40px;
+        margin-left: 96px;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .main_about2 .txt2 {
+        margin-top: 5px;
+        margin-left: 96px;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .main_about2 p.txt1 {
+        margin-top: 60px;
+        margin-left: 96px;
+        font-size: 17px;
+        color: #fff;
+    }
+
+    .main_about2 p.txt2 {
+        margin-top: 11px;
+        margin-left: 96px;
+        font-size: 17px;
+        color: #fff;
+    }
+
+    .main_about2 .views3 {
+        font-size: 60px;
+        margin-top: 60px;
+        margin-left: 180px;
+    }
+
+    .main_about2 .views4 {
+        font-size: 60px;
+        margin-top: 60px;
+        margin-right: -35px;
+    }
+
     .main_view {
-        flex-direction: column;
-        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        max-width: 800px;
+        margin: 20px auto;
+        flex-wrap: wrap;
+        margin-left: -110px;
+    }
+
+    .views2 .txt21 {
+        font-size: 20px;
+        margin-top: -8px;
+        margin-left: -133px;
+    }
+
+    .views1 .txt20 {
+        font-size: 20px;
+        margin-right: 60px;
+        margin-top: -8px;
+    }
+
+    .views1,
+    .views2 {
+        flex: 1;
+        text-align: center;
+        padding: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+        /* /background-color: #490505;   */
+        border-radius: 80px;
+        min-width: 150px;
+        /* Ensures they stay side-by-side on larger screens */
+    }
+
+    .main_view.views3 {
+        flex: 1;
+        text-align: center;
+        padding: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+        /* background-color: #a00000;  */
+        border-radius: 80px;
+        min-width: 150px;
+        margin-right: 80px;
     }
 }
+
+
 
 @media (max-width: 768px) {
     .main-txt {
         font-size: 18px;
         margin-top: 40px;
-        
+
     }
 
     .abc,
@@ -346,7 +448,7 @@
     .card {
         width: 100%;
         margin-bottom: 20px;
-        
+
     }
 
     .main_about2 .txt1,
@@ -379,14 +481,22 @@
 
     .main-txt {
         font-size: 16px;
-        margin-left: 60px;
+        margin-left: 130px;
     }
+
+    small {
+        font-size: 90%;
+        margin-left: 2px;
+    }
+     
+    
+
 
     .abc,
     .down-txt,
     .first2 {
         font-size: 16px;
-        margin-left: 10px;
+        margin-left: 183px;
     }
 
     .help-center {
@@ -396,42 +506,56 @@
 
     .abc,
     .down-txt {
-        font-size: 28px;
+        font-size: 21px;
     }
 
     .card {
-        width: 150%;
+        width: 170%;
         margin-left: -50px;
     }
 
+
     .card .logo_two {
         width: 50%;
-        margin-left: 60px;
+        margin-left: 80px;
+    }
+
+    .main_about01 .main_about02 {
+        max-width: 100%;
+        padding: 5px;
     }
 
 
     .main_about01 .txt_1 {
         font-size: 19px;
-
+        min-width: 350px;
+        margin-left: -10px;
     }
 
     .main_about01 .txt_2 {
         font-size: 19px;
-
+        min-width: 350px;
+        margin-left: -10px;
     }
 
     .main_about01 .txt_3 {
         font-size: 19px;
-
+        min-width: 353px;
+        margin-left: -10px;
     }
 
     .main_about01 .txt_4 {
         font-size: 19px;
+        min-width: 350px;
+        margin-left: -10px;
 
     }
 
     .main_about02 .photo {
-        margin-left: 46px;
+
+        margin-left: -53px;
+        width: 350px;
+
     }
 
 
@@ -457,21 +581,36 @@
 
     .main_view .views1 {
         font-size: 45px;
-        margin-right: 80px;
+        margin-right: 153px;
+
     }
 
     .main_view .views2 {
         font-size: 45px;
-        margin-left: 90px;
+        margin-left: -170px;
+        margin-top: -10px;
     }
 
     .main_view .views3 {
         font-size: 45px;
-        margin-left: 90px;
+        margin-left: 116px;
+        margin-block-start: auto;
     }
 
     .main_view .views4 {
-        font-size: 35px;
-        margin-left: 90px;
+        font-size: 45px;
+        margin-left: 112px;
+        margin-block-start: auto;
+    }
+
+    .views1 .txt20 {
+        font-size: 20px;
+        margin-right: 32px;
+        margin-top: -8px;
+    }
+    .views2 .txt21 {
+        font-size: 20px;
+        margin-right: -30px;
+        margin-top: -8px;
     }
 }

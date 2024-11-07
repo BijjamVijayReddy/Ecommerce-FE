@@ -10,7 +10,7 @@ import about from '../../assests/about-img.jpg'
 const About = () => {
   return (
     <div className='main_about'>
-      <AppHeader />
+      <AppHeader /> 
       <div className='first'>
         <div className='main_about01'>
           <h4 className='abc'>The Future of</h4>
