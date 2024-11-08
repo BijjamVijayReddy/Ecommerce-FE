@@ -8,7 +8,9 @@ import Categories from "../pages/categories/Categories";
 import About from '../pages/about-us/About';
 import Contact from '../pages/contact/Contact';
 // import Cart from '../pages/cart/Cart';
+import Singlepage from "../pages/singlepage/Singlepage";
 import Profile from '../components/profile/Profile';
+
 
 const AppRoutes = () => {
     return (
@@ -22,7 +24,8 @@ const AppRoutes = () => {
             <Route path="/contact" element={<Contact />} />
             {/* <Route path='/cart' element={<Cart />} /> */}
             <Route path='*' element={<Navigate to="/" />} />
-            <Route path='/profile' element ={<Profile/>} />
+            <Route path='/Singlepage' element={<Singlepage />} />
+            <Route path='/profile' element={<Profile />} />
         </Routes>
     )
 }
