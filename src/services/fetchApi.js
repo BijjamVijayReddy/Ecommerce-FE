@@ -2,7 +2,7 @@ import axios from "axios";
 import { showToast } from "../components/toast/Toast";
 
 const apiClient = axios.create({
-    baseURL: ' https://swiftcart-backend-hcbccxbwhjb0b9fu.southindia-01.azurewebsites.net/swift-cart',
+    baseURL: ' https://backend--swiftcart-dphkezfcg7ekapax.southindia-01.azurewebsites.net/swift-cart',
     headers: {
         'Content-Type': 'application/json',
     },
